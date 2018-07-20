@@ -11,8 +11,6 @@
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
-    
-
     <!-- ##### Blog Area Start ##### -->
     <section class="blog-area section-padding-100">
         <div class="container">
@@ -42,7 +40,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus accusamus accusantium nisi quas tempore quod placeat soluta, quam, ex, pariatur doloremque, quasi ut vitae aspernatur quisquam dolores consequatur deleniti sed perferendis consequuntur. Aut quod, dolorum molestiae veritatis molestias, nemo sit, voluptatibus, quaerat cupiditate magni dignissimos minus repellendus labore.</p>
                         </div>
                     </div>
-
                     <div class="comments-area">
                         <h5>4 Comments</h5>
                         <ol>
@@ -102,12 +99,10 @@
                             </li>
                         </ol>
                     </div>
-
                     <!-- Leave A Comment -->
                     <div class="leave-comment-area mt-70 clearfix">
                         <div class="comment-form">
                             <h5>Leave a reply</h5>
-
                             <!-- Comment Form -->
                             <form action="#" method="post">
                                 <div class="form-group">
@@ -124,7 +119,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-12 col-lg-4">
                     <div class="blog-sidebar-area">
 
@@ -135,7 +129,6 @@
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
-
                         <!-- Catagories Widget -->
                         <div class="south-catagories-card mb-70">
                             <h5>Archive</h5>
@@ -147,7 +140,6 @@
                                 <li><a href="#">General surgery</a></li>
                             </ul>
                         </div>
-
                         <!-- Catagories Widget -->
                         <div class="south-catagories-card mb-70">
                             <h5>Categories</h5>
@@ -159,7 +151,6 @@
                                 <li><a href="#">General surgery</a></li>
                             </ul>
                         </div>
-
                         <!-- Catagories Widget -->
                         <div class="featured-properties-slides owl-carousel">
 
@@ -200,7 +191,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Single Slide -->
                             <div class="single-featured-property">
                                 <!-- Property Thumbnail -->
@@ -239,14 +229,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- ##### Blog Area End ##### -->
-
- <?php 
- include_once'../template/footer.php';
-  ?>

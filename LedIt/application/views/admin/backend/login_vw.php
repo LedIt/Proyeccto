@@ -10,16 +10,16 @@
   <link rel="shortcut icon" href="<?=base_url();?>libraries/img/icons/icon.png">
   <title>LedIt | Login</title>
   <!-- Bootstrap CSS -->
-  <link href="<?=base_url();?>libraries/libraries-backend/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?=base_url();?>libraries/libraries-backend/login-styles/css/bootstrap.min.css" rel="stylesheet">
   <!-- bootstrap theme -->
-  <link href="<?=base_url();?>libraries/libraries-backend/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="<?=base_url();?>libraries/libraries-backend/login-styles/css/bootstrap-theme.css" rel="stylesheet">
   <!--external css-->
   <!-- font icon -->
-  <link href="<?=base_url();?>libraries/libraries-backend/css/elegant-icons-style.css" rel="stylesheet" />
-  <link href="<?=base_url();?>libraries/libraries-backend/css/font-awesome.css" rel="stylesheet" />
+  <link href="<?=base_url();?>libraries/libraries-backend/login-styles/css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="<?=base_url();?>libraries/libraries-backend/login-styles/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles -->
-  <link href="<?=base_url();?>libraries/libraries-backend/css/style.css" rel="stylesheet">
-  <link href="<?=base_url();?>libraries/libraries-backend/css/style-responsive.css" rel="stylesheet" />
+  <link href="<?=base_url();?>libraries/libraries-backend/login-styles/css/style.css" rel="stylesheet">
+  <link href="<?=base_url();?>libraries/libraries-backend/login-styles/css/style-responsive.css" rel="stylesheet" />
 </head>
 
 
@@ -30,7 +30,7 @@
         <p class="login-img"><i class="icon_lock_alt"></i></p>
         <div class="input-group">
           <span class="input-group-addon"><i class="icon_profile"></i></span>
-          <input type="text" class="form-control" name="user" placeholder="Usuario" autofocus required>
+          <input type="email" class="form-control" name="correo_Usuario" placeholder="Correo Electrónico" autofocus required>
         </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="icon_key_alt"></i></span>

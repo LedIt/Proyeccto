@@ -1,6 +1,6 @@
 
 <!-- ##### Footer Area Start ##### -->
-    <footer class=" wow fadeInUp footer-area section-padding-100-0 bg-img gradient-background-overlay" style="background-image: url(<?=base_url();?>libraries/img/bg-img/cta.jpg);">
+    <footer class=" wow fadeInUp footer-area section-padding-100-0 bg-img gradient-background-overlay" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s1.jpg);">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
@@ -34,11 +34,10 @@
                             </div>
                             <!-- Office Hours -->
                             <div class="weekly-office-hours">
-                                <ul>
-                                    <li class="d-flex align-items-center justify-content-between"><span><strong>Lunes - Viernes</strong></span><span>09:00 AM - 6:00 PM</span></li>
-                                    <li class="d-flex align-items-center justify-content-between"><span><strong>Sábado<strong></strong></span><span>09:00 AM - 5:00 PM</span></li>
-                                    <li class="d-flex align-items-center justify-content-between"><span><strong>Domingo<strong></span><span>09:00 AM - 03:00 PM</span></li>
-                                </ul>
+                                <?php
+                            $data = array('10' => 'https://www.codeigniter.com/user_guide/libraries/calendar.html');
+                              echo $this->calendar->generate(2018,7,$data);
+                            ?>      
                             </div>
                         </div>
                     </div>

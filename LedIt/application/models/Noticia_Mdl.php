@@ -1,69 +1,30 @@
 <?php
+/**
+ * Clase "Noticia_Mdl" procesa y realiza las funciones de agregado,listado,modificación y eliminación interactuando deirectamente con los datos.
+ *
+ *
+ * @category   Class/Model
+ * @package    application
+ * @subpackage models
+ * @copyright  Copyright (c) 2018-2019 Revoltech Inc.
+ * @version    Release: 1.0
+ * @since      Class available since Release 1.0
+ * @deprecated Class deprecated in Release 1.1
+ */
 
-class Noticia_Mdl extends CI_Model
-{
+/**
+ * La clase extiende o hereda de "CI_Model" el cual servira para comunicarse con su controlador.
+ */
+class Noticia_Mdl extends CI_Model{
     function __construct(){
         parent::__construct();
     }
- 
-    public function nuevoNoticia($id_Noticia, $id_Usuario_Noticia, $titulo_Noticia, $imagen_Noticia, $descripcion_Corta_Noticia, $descripcion_Larga_Noticia, $fecha_Noticia, $status_Noticia){
-        $data= array(
-            'id_Noticia' => $id_Noticia,
-            'id_Usuario_Noticia' => $id_Usuario_Noticia,
-            'titulo_Noticia' => $titulo_Noticia,
-            'imagen_Noticia' => $imagen_Noticia,
-            'descripcion_Corta_Noticia' => $descripcion_Corta_Noticia,
-            'descripcion_Largas_Noticia' => $descripcion_Larga_Noticia,
-            'fecha_Noticia' => $fecha_Noticia,
-            'status_Noticia' => $status_Noticia 
-        );
-        $this->db->insert('noticias', $data);
-    }
-
-    public function listarNoticia(){
-        $noti = $this->db->get('noticias');
-        return $noti->result();
-    }
-
+/**
+ * La función procesa los datos y ejecuta la consulta de listado de los registros de noticias en la base de datos (FrontEnd).
+ */
     public function listarNoticiaFront(){
         $noti = $this->db->get('noticias');
         return $noti->result();
     }
-
-    public function listarUnoNoticia($noti){
-        $data = array('id_Noticia'=>$id_Noticia);
-        $this->db->where($data);
-        $noti = $this->db->get('noticias');
-        return $noti->result();
-    }
-
-    public function modificarNoticia($id_Noticia, $id_Usuario_Noticia, $titulo_Noticia, $imagen_Noticia, $descripcion_Corta_Noticia, $descripcion_Larga_Noticia, $fecha_Noticia, $status_Noticia){
-        $data= array(
-            'id_Noticia' => $id_Noticia,
-            'id_Usuario_Noticia' => $id_Usuario_Noticia,
-            'titulo_Noticia' => $titulo_Noticia,
-            'imagen_Noticia' => $imagen_Noticia,
-            'descripcion_Corta_Noticia' => $descripcion_Corta_Noticia,
-            'descripcion_Largas_Noticia' => $descripcion_Larga_Noticia,
-            'fecha_Noticia' => $fecha_Noticia,
-            'status_Noticia' => $status_Noticia 
-        );
-        $this->db->where("id_Noticia = $id_Noticia");
-        $this->db->update('noticias', $data);
-    }
-
-    public function eliminarNoticia($n){
-        $data = array('id_Noticia'=>$n);
-        $this->db->where($data);
-        $noti = $this->db->delete('noticias');
-    }
-
-     public function cambiarStatusNoticia($id_Noticia, $status_Noticia){
-        $data= array(
-            'status_Noticia' => $status_Noticia
-        );
-        $this->db->where("id_Noticia = 'id_Noticia'");
-        $this->db->update('noticias', $data);
-    }
-    
 }
+?>

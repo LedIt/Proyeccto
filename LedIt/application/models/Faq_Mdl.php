@@ -1,63 +1,33 @@
 <?php
+/**
+ * Clase "Faq_Mdl" procesa y realiza las funciones de agregado,listado,modificación y eliminación interactuando deirectamente con los datos.
+ *
+ *
+ * @category   Class/Model
+ * @package    application
+ * @subpackage models
+ * @copyright  Copyright (c) 2018-2019 Revoltech Inc.
+ * @version    Release: 1.0
+ * @since      Class available since Release 1.0
+ * @deprecated Class deprecated in Release 1.1
+ */
 
-class Faq_Mdl extends CI_Model
-{
+/**
+ * La clase extiende o hereda de "CI_Model" el cual servira para comunicarse con su controlador.
+ */
+class Faq_Mdl extends CI_Model{
     function __construct(){
         parent::__construct();
     }
- 
-    public function nuevoFaq($id_Faq, $id_Usuario_Faq, $pregunta_Faq, $respuesta_Faq, $status_Faq){
-        $data= array(
-            'id_Faq' => $id_Faq,
-            'id_Usuario_Faq' => $id_Usuario_Faq,
-            'pregunta_Faq' => $pregunta_Faq,
-            'respuesta_Faq'=> $respuesta_Faq,
-            'satatus_Faq'=> $status_Faq
-        );
-        $this->db->insert('faqs', $data);
-    }
-
-    public function listarFaq(){
-        $faq = $this->db->get('faqs');
-        return $faq->result();
-    }
-
+/**
+ * La función procesa los datos y ejecuta la consulta de listado de los registros de faqs en la base de datos (FrontEnd).
+ */
     public function listarFaqFront(){
         $faq = $this->db->get('faqs');
         return $faq->result();
     }
-
-    public function listarUnoFaq($faq){
-        $data = array('id_Faq'=>$faq);
-        $this->db->where($faq);
-        $f = $this->db->get('faqs');
-        return $f->result();
-    }
-
-   public function modificarFaq($id_Faq, $id_Usuario_Faq, $pregunta_Faq, $respuesta_Faq, $status_Faq){
-        $data= array(
-            'id_Faq' => $id_Faq,
-            'id_Usuario_Faq' => $id_Usuario_Faq,
-            'pregunta_Faq' => $pregunta_Faq,
-            'respuesta_Faq'=> $respuesta_Faq,
-            'satatus_Faq'=> $status_Faq,
-        );
-        $this->db->where("id_Faq = $i_Faq");
-        $this->db->update('faqs', $data);
-    }
-
-    public function eliminarFaq($f){
-        $data = array('id_Faq'=>$f);
-        $this->db->where($data);
-        $faq = $this->db->delete('faqs');
-    }
-
-    public function cambiarStatusFaq($id_Faq, $status_Faq){
-        $data= array(
-            'status_Faq' => $status_Faq
-        );
-        $this->db->where("id_Faq = 'id_Faq'");
-        $this->db->update('faqs', $data);
-    }
-    
+/**
+ * La función solicita y muestra los datos de un registro seleccionado de faqs ubicandolo por medio del campo "id_Faq".
+ */
 }
+?>

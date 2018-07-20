@@ -1046,11 +1046,27 @@ img {
       font-size: 18px; }
     .single-featured-property .property-content p {
       margin-bottom: 30px; }
+
+
     .single-featured-property .property-content .location {
-      color: #947054;
+      color: #696969;
+      margin-bottom: 25px;
+      font-size: 14px;
+      font-weight: 600;
+       -webkit-transition-duration: 500ms;
+      transition-duration: 500ms; }
+
+          .single-featured-property .property-content .location:hover{
+      color: #000;
+       -webkit-transition-duration: 500ms;
+      transition-duration: 500ms;
       margin-bottom: 25px;
       font-size: 14px;
       font-weight: 600; }
+
+
+
+
       .single-featured-property .property-content .location img {
         margin-right: 10px;
         display: inline-block !important;

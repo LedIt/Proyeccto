@@ -11,7 +11,6 @@
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
-
     <!-- ##### Listings Content Area Start ##### -->
     <section class="listings-content-wrapper section-padding-100">
         <div class="container">
@@ -26,7 +25,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
                     <div class="listings-content">

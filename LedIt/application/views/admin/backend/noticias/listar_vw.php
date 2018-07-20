@@ -1,121 +1,76 @@
-<!--main content start-->
-    <section id="main-content">
-      <section class="wrapper">
-        
-        <!-- page start-->
-        <div class="row">
-          <div class="col-lg-12">
-            <section class="panel">
-              <header class="panel-heading">
-                Registro de Noticias
-              </header>
-              <br>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php 
+foreach($css_files as $file): ?>
+  <link type="text/css" rel="stylesheet" href="<?=$file; ?>" />
+<?php endforeach; ?>
+</head>
+<body>
 
-              <div class="table-responsive">
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Users <small>Some examples to get you started</small></h3>
+              </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Default Example <small>Users</small></h2>
+                    
+                    <div class="clearfix"></div>
 
-              <table class="table table-striped table-advance table-hover">
-                <tbody>
-                  <tr>
-                    <th><i class="icon_profile"></i> ID Noticias</th>
-                    <th><i class="icon_calendar"></i> ID Usuario</th>
-                    <th><i class="icon_calendar"></i> Imagen</th>
-                    <th><i class="icon_calendar"></i> Titulo</th>
-                    <th><i class="icon_mail_alt"></i> Descripcion Corta</th>
-                    <th><i class="icon_mail_alt"></i> Descripcion Larga</th>
-                    <th><i class="icon_pin_alt"></i> Fecha</th>
-                    <th><i class="icon_mobile"></i> Status</th>
-                    <th><i class="icon_cogs"></i> Action</th>
-                  </tr>
 
-      <?php
-        foreach($noticias as $noti):
-      ?>
-                  <tr>
-                    <td><?=$noti->id_Noticia;?></td>
-                    <td><?=$noti->id_Usuario_Noticia;?></td>
-
-                    <?php $ruta=base_url(). "libraries/libraries-backend/img/thumbnails/"?>
-
-                     <?php if($noti->imagen_Noticia != null){ ?>
-
-                        <td><img width="10%" src="<?=$ruta.$noti->imagen_Noticia;?>"></td>
-
-                     <?php }else{ ?>
-
-                        <td><img width="60%" src="<?=$ruta.'ledit.png';?>"></td>
-
-                     <?php } ?>
-                    <td><?=$noti->titulo_Noticia;?></td>
-                    <td><?=$noti->descripcion_Corta_Noticia;?></td>
-                    <td><?=$noti->descripcion_Larga_Noticia;?></td>
-                    <td><?=$noti->fecha_Noticia;?></td>
-                    <td><?=$noti->status_Noticia;?></td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-      <?php
-          endforeach;
-      ?>
-                </tbody>
-              </table>
-               </div>
-
-            </section>
+                     <?php echo $output; ?>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <!-- page end-->
-      </section>
-    </section>
+        <!-- /page content -->
+    </div>
+    <?php foreach($js_files as $file): ?>
+        <script src="<?=$file; ?>"></script>
+    <?php endforeach; ?>
+    <!-- javascripts -->
+    <!-- Bootstrap -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/pdfmake/build/vfs_fonts.js"></script>
 
-        <script>
-      //knob
-      $(function() {
-        $(".knob").knob({
-          'draw': function() {
-            $(this.i).val(this.cv + '%')
-          }
-        })
-      });
+    <!-- Custom Theme Scripts -->
+    <script src="<?=base_url();?>libraries/libraries-backend/build/js/custom.min.js"></script>
+</body>
+</html>
 
-      //carousel
-      $(document).ready(function() {
-        $("#owl-slider").owlCarousel({
-          navigation: true,
-          slideSpeed: 300,
-          paginationSpeed: 400,
-          singleItem: true
-
-        });
-      });
-
-      //custom select box
-
-      $(function() {
-        $('select.styled').customSelect();
-      });
-
-      /* ---------- Map ---------- */
-      $(function() {
-        $('#map').vectorMap({
-          map: 'world_mill_en',
-          series: {
-            regions: [{
-              values: gdpData,
-              scale: ['#000', '#000'],
-              normalizeFunction: 'polynomial'
-            }]
-          },
-          backgroundColor: '#eef3f7',
-          onLabelShow: function(e, el, code) {
-            el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-          }
-        });
-      });
-    </script>
-
-
+ 
+    
+    

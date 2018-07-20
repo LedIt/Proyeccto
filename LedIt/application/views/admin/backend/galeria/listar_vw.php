@@ -1,226 +1,76 @@
-<?php
-if (!$this->session->has_userdata('usuarios')) {
-}
-?>
-<!--main content start-->
-    <section id="main-content">
-      <section class="wrapper">
-        
-        <!-- page start-->
-        <div class="row">
-          <div class="col-lg-12">
-            <section class="panel">
-              <header class="panel-heading">
-                Registro de Galeria
-              </header>
-              <br>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php 
+foreach($css_files as $file): ?>
+  <link type="text/css" rel="stylesheet" href="<?=$file; ?>" />
+<?php endforeach; ?>
+</head>
+<body>
 
-              <div class="table-responsive">
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Users <small>Some examples to get you started</small></h3>
+              </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Default Example <small>Users</small></h2>
+                    
+                    <div class="clearfix"></div>
 
-              <table class="table table-striped table-advance table-hover">
-                <tbody>
-                  <tr>
-                    <th><i class="icon_profile"></i> Full Name</th>
-                    <th><i class="icon_calendar"></i> Date</th>
-                    <th><i class="icon_mail_alt"></i> Email</th>
-                    <th><i class="icon_pin_alt"></i> City</th>
-                    <th><i class="icon_mobile"></i> Mobile</th>
-                    <th><i class="icon_cogs"></i> Action</th>
-                  </tr>
-                  <tr>
-                    <td>Angeline Mcclain</td>
-                    <td>2004-07-06</td>
-                    <td>dale@chief.info</td>
-                    <td>Rosser</td>
-                    <td>176-026-5992</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Sung Carlson</td>
-                    <td>2011-01-10</td>
-                    <td>ione.gisela@high.org</td>
-                    <td>Robert Lee</td>
-                    <td>724-639-4784</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Bryon Osborne</td>
-                    <td>2006-10-29</td>
-                    <td>sol.raleigh@language.edu</td>
-                    <td>York</td>
-                    <td>180-456-0056</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Dalia Marquez</td>
-                    <td>2011-12-15</td>
-                    <td>angeline.frieda@thick.com</td>
-                    <td>Alton</td>
-                    <td>690-601-1922</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Selina Fitzgerald</td>
-                    <td>2003-01-06</td>
-                    <td>moshe.mikel@parcelpart.info</td>
-                    <td>Waelder</td>
-                    <td>922-810-0915</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Abraham Avery</td>
-                    <td>2006-07-14</td>
-                    <td>harvey.jared@pullpump.org</td>
-                    <td>Harker Heights</td>
-                    <td>511-175-7115</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Caren Mcdowell</td>
-                    <td>2002-03-29</td>
-                    <td>valeria@hookhope.org</td>
-                    <td>Blackwell</td>
-                    <td>970-147-5550</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Owen Bingham</td>
-                    <td>2013-04-06</td>
-                    <td>thomas.christopher@firstfish.info</td>
-                    <td>Rule</td>
-                    <td>934-118-6046</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Ahmed Dean</td>
-                    <td>2008-03-19</td>
-                    <td>lakesha.geri.allene@recordred.com</td>
-                    <td>Darrouzett</td>
-                    <td>338-081-8817</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Mario Norris</td>
-                    <td>2010-02-08</td>
-                    <td>mildred@hour.info</td>
-                    <td>Amarillo</td>
-                    <td>945-547-5302</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
-                        <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-               </div>
 
-            </section>
+                     <?php echo $output; ?>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <!-- page end-->
-      </section>
-    </section>
+        <!-- /page content -->
+    </div>
+    <?php foreach($js_files as $file): ?>
+        <script src="<?=$file; ?>"></script>
+    <?php endforeach; ?>
+    <!-- javascripts -->
+    <!-- Bootstrap -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/pdfmake/build/vfs_fonts.js"></script>
 
-        <script>
-      //knob
-      $(function() {
-        $(".knob").knob({
-          'draw': function() {
-            $(this.i).val(this.cv + '%')
-          }
-        })
-      });
+    <!-- Custom Theme Scripts -->
+    <script src="<?=base_url();?>libraries/libraries-backend/build/js/custom.min.js"></script>
+</body>
+</html>
 
-      //carousel
-      $(document).ready(function() {
-        $("#owl-slider").owlCarousel({
-          navigation: true,
-          slideSpeed: 300,
-          paginationSpeed: 400,
-          singleItem: true
-
-        });
-      });
-
-      //custom select box
-
-      $(function() {
-        $('select.styled').customSelect();
-      });
-
-      /* ---------- Map ---------- */
-      $(function() {
-        $('#map').vectorMap({
-          map: 'world_mill_en',
-          series: {
-            regions: [{
-              values: gdpData,
-              scale: ['#000', '#000'],
-              normalizeFunction: 'polynomial'
-            }]
-          },
-          backgroundColor: '#eef3f7',
-          onLabelShow: function(e, el, code) {
-            el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-          }
-        });
-      });
-    </script>
-
+ 
+    
+    

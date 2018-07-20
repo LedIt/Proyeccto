@@ -1,105 +1,43 @@
-
-
-      </section>
-      <div hidden="true" class="text-right">
-        <div class="credits">
-        
-          <a href="https://bootstrapmade.com/">Free Bootstrap Templates</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
+ <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+             Desarrollado por <a href="https://colorlib.com">Revoltech &copy; <script>document.write(new Date().getFullYear());</script> </a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
       </div>
-    </section>
-    <!--main content end-->
-  </section>
-  <!-- container section start -->
+    </div>
 
+    <!-- jQuery -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/pdfmake/build/vfs_fonts.js"></script>
 
-  <!-- javascripts -->
-  <script src="<?=base_url();?>libraries/libraries-backend/js/jquery.js"></script>
-  <script src="<?=base_url();?>libraries/libraries-backend/js/jquery-ui-1.10.4.min.js"></script>
-  <script src="<?=base_url();?>libraries/libraries-backend/js/jquery-1.8.3.min.js"></script>
-  <script type="text/javascript" src="<?=base_url();?>libraries/libraries-backend/js/jquery-ui-1.9.2.custom.min.js"></script>
-  <!-- bootstrap -->
-  <script src="<?=base_url();?>libraries/libraries-backend/js/bootstrap.min.js"></script>
-  <!-- nice scroll -->
-  <script src="<?=base_url();?>libraries/libraries-backend/js/jquery.scrollTo.min.js"></script>
-  <script src="<?=base_url();?>libraries/libraries-backend/js/jquery.nicescroll.js" type="text/javascript"></script>
-  <!-- charts scripts -->
-  <script src="assets/jquery-knob/js/jquery.knob.js"></script>
-  <script src="<?=base_url();?>libraries/libraries-backend/js/jquery.sparkline.js" type="text/javascript"></script>
-  <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-  <script src="<?=base_url();?>libraries/libraries-backend/js/owl.carousel.js"></script>
-  <!-- jQuery full calendar -->
-  <script src="<?=base_url();?>libraries/libraries-backend/js/fullcalendar.min.js"></script>
-    <!-- Full Google Calendar - Calendar -->
-    <script src="assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
-    <!--script for this page only-->
-    <script src="<?=base_url();?>libraries/libraries-backend/js/calendar-custom.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/jquery.rateit.min.js"></script>
-    <!-- custom select -->
-    <script src="<?=base_url();?>libraries/libraries-backend/js/jquery.customSelect.min.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/assets/chart-master/Chart.js"></script>
-    <!--custome script for all page-->
-    <script src="<?=base_url();?>libraries/libraries-backend/js/scripts.js"></script>
-    <!-- custom script for this page-->
-    <script src="<?=base_url();?>libraries/libraries-backend/js/sparkline-chart.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/easy-pie-chart.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/xcharts.min.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/jquery.autosize.min.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/jquery.placeholder.min.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/gdp-data.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/morris.min.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/sparklines.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/charts.js"></script>
-    <script src="<?=base_url();?>libraries/libraries-backend/js/jquery.slimscroll.min.js"></script>
-    
-    <script>
-      //knob
-      $(function() {
-        $(".knob").knob({
-          'draw': function() {
-            $(this.i).val(this.cv + '%')
-          }
-        })
-      });
+    <!-- Custom Theme Scripts -->
+    <script src="<?=base_url();?>libraries/libraries-backend/build/js/custom.min.js"></script>
 
-      //carousel
-      $(document).ready(function() {
-        $("#owl-slider").owlCarousel({
-          navigation: true,
-          slideSpeed: 300,
-          paginationSpeed: 400,
-          singleItem: true
-
-        });
-      });
-
-      //custom select box
-
-      $(function() {
-        $('select.styled').customSelect();
-      });
-
-      /* ---------- Map ---------- */
-      $(function() {
-        $('#map').vectorMap({
-          map: 'world_mill_en',
-          series: {
-            regions: [{
-              values: gdpData,
-              scale: ['#000', '#000'],
-              normalizeFunction: 'polynomial'
-            }]
-          },
-          backgroundColor: '#eef3f7',
-          onLabelShow: function(e, el, code) {
-            el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-          }
-        });
-      });
-    </script>
-
-</body>
-
+  </body>
 </html>

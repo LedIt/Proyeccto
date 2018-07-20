@@ -17,7 +17,6 @@
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
-
     <section class="south-contact-area section-padding-100">
         <div class="container">
             <div class="row">
@@ -27,7 +26,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-12 col-lg-4">
                     <div class="content-sidebar">
@@ -47,11 +45,10 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Contact Form Area -->
                 <div class="col-12 col-lg-8">
                     <div class="contact-form">
-                        <form action="#" method="post">
+                        <form action="<?=base_url().'index.php/Contactos/nuevoContacto';?>" method="POST">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="text" id="contact-name" placeholder="Your Name">
                             </div>
@@ -71,7 +68,6 @@
             </div>
         </div>
     </section>
-
     <!-- Google Maps -->
     <div class="map-area mb-100">
         <div class="container">
@@ -82,7 +78,6 @@
                     </div>
                          <iframe class="googleMap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3751.7557738648165!2d-100.44384559999999!3d19.892532!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2d09cc7ac5a87%3A0x6bcd2e5dc3e01cfc!2zw4FsdmFybyBPYnJlZ8OzbiAyNg!5e0!3m2!1ses!2s!4v1403459955944">
                          </iframe>
-               
                 </div>
             </div>
         </div>

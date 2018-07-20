@@ -1,6 +1,16 @@
 <?php
-if (!$this->session->has_userdata('usuarios')) {
-}
+/**
+ * Archivo con php embebido para listado de las faqs registradas en la base de datos (FrontEnd).
+ *
+ *
+ *
+ * @category   File
+ * @package    views
+ * @subpackage frontend
+ * @copyright  Copyright (c) 2018-2019 Revoltech Inc.
+ * @version    $Id:$1.0
+ * @since      File available since Release 1.0
+*/
 ?>
     <!-- ##### Breadcumb Area Start ##### -->
     <section class="breadcumb-area bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s4.jpg);">
@@ -19,39 +29,39 @@ if (!$this->session->has_userdata('usuarios')) {
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
-
     
-<!-- ##### Testimonials Area Start ##### -->
+   <!-- ##### Testimonials Area Start ##### -->
     <section class="south-testimonials-area section-padding-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading wow fadeInUp" data-wow-delay="250ms">
-                        <h2>Client testimonials</h2>
-                        <p>Suspendisse dictum enim sit amet libero malesuada feugiat.</p>
+                        <h2>Preguntas Frecuentes</h2>
+                        <p>Cualquier tipo de duda que tengas aqui podras resolverla</p>
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-12">
                     <div class="testimonials-slides owl-carousel wow fadeInUp" data-wow-delay="500ms">
-
                         <!-- Single Testimonial Slide -->
-    <?php
-        foreach($faqs as $faq):
-    ?>
+                    <?php
+                    /**
+                     * Generara un listado de las faqs por medio del objeto declarado en la clase "Faq_Mdl".
+                     */
+                        foreach($faqs as $faq):
+                    ?>
                         <div class="single-testimonial-slide text-center">
                             <h5><?=$faq->pregunta_Faq;?></h5>
                             <p><?=$faq->respuesta_Faq;?></p>
                             <div class="testimonial-author-info">
-                                <img src="<?=base_url();?>libraries/img/bg-img/feature6.jpg" alt="">
-                                <p>Daiane Smith, <span>Customer</span></p>
+                                <img src="<?=base_url();?>libraries/img/bg-img/s2.jpg" alt="">
+                                <p>Led It<span></span></p>
                             </div>
                         </div>
-    <?php
-             endforeach;
-    ?>
+                    <?php
+                        endforeach;
+                    ?>
                     </div>
                 </div>
             </div>
