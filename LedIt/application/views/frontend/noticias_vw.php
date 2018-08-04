@@ -51,7 +51,7 @@
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail wow fadeInUp">
                             
-                    <?php $ruta1=base_url(). "libraries/libraries-backend/images/thumbnails/noticias"?>
+                    <?php $ruta1=base_url(). "libraries/libraries-backend/images/thumbnails/noticias/"?>
                     <?php $ruta2=base_url(). "libraries/libraries-backend/images/thumbnails/"?>
                     <?php
                     /**

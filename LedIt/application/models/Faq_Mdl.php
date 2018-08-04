@@ -23,7 +23,8 @@ class Faq_Mdl extends CI_Model{
  * La función procesa los datos y ejecuta la consulta de listado de los registros de faqs en la base de datos (FrontEnd).
  */
     public function listarFaqFront(){
-        $faq = $this->db->get('faqs');
+    	$this->db->order_by('id_Faq','DESC');
+        $faq = $this->db->get_where('faqs','id_Status_Faq = 1');
         return $faq->result();
     }
 /**

@@ -23,8 +23,9 @@ class Producto_Mdl extends CI_Model{
  * La función procesa los datos y ejecuta la consulta de listado de los registros de productos en la base de datos (FrontEnd).
  */
     public function listarProductoFront(){
-        $prod = $this->db->get('productos');
-        return $prod->result();
+       $this->db->order_by('id_Producto','DESC');
+       $prod = $this->db->get_where('productos','id_Status_Producto = 1');
+       return $prod->result();
     }
 }
 ?>

@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Clase "Contacto_Mdl" procesa y realiza las funciones de agregado,listado,modificación y eliminación interactuando deirectamente con los datos.
@@ -22,23 +23,64 @@ class Contacto_Mdl extends CI_Model{
 /**
  * La función procesa los datos y ejecuta la consulta de agregado de un contacto en la base de datos.
  */
-    public function nuevoContacto($id_Contacto, $id_Usuario_Contacto, $fecha_Contacto, $asunto_Contacto, $mensaje_Contacto){
+    public function nuevoContacto($id_Contacto, $nombre_Contacto, $telefono_Contacto, $email_Contacto, $mensaje_Contacto, $fecha_Contacto){
         $data= array(
             'id_Contacto' => $id_Contacto,
-            'id_Usuario_Contacto' => $id_Usuario_Contacto,
-            'fecha_Contacto' => $fecha_Contacto,
-            'asunto_Contacto' => $asunto_Contacto,
+            'nombre_Contacto' => $nombre_Contacto,
+            'telefono_Contacto' => $telefono_Contacto,
+            'email_Contacto' => $email_Contacto,
             'mensaje_Contacto' => $mensaje_Contacto,
-            'status_Contacto' => $status_Contacto 
+            'fecha_Contacto' => $fecha_Contacto
         );
-        $this->db->insert('contactos', $data);
+       $valida=$this->db->insert('contactos', $data);
+    if ($valida) {
+  ?>
+  <script type="text/javascript" src="<?=base_url();?>libraries/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script type="text/javascript" src="<?=base_url();?>libraries/sweetalert2/dist/jquery-1.11.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="<?=base_url();?>libraries/sweetalert2/dist/sweetalert2.css">
+
+        <script>
+        $(document).ready(function(){
+                    swal({
+                        title: 'Correcto',
+                        text: '¡Tu mensaje ha sido enviado!',
+                        type: 'success'
+                    }).then(function() {
+                        window.location.href = '<?=base_url();?>ControlFrontEnd/index/6';
+                    });    
+                });
+        </script>
+    <?php 
+
+    }else{
+      ?>
+       <script>
+        $(document).ready(function(){
+                    swal({
+                        title: 'Lo sentimos',
+                        text: '¡Tu mensaje no pudo ser enviado!',
+                        type: 'warning'
+                    }).then(function() {
+                        window.location.href = '<?=base_url();?>ControlFrontEnd/index/6';
+                    });    
+                });
+        </script>
+        <?php
     }
+}
+ 
 /**
  * La función procesa los datos y ejecuta la consulta de listado de los registros de cantactos en la base de datos (BackEnd).
  */
+
+    public function redireccionar(){
+      redirect('ControlFrontEnd/index/6');
+    }
+
     public function listarContacto(){
-        $noti = $this->db->get('Contactos');
-        return $noti->result();
+        $this->db->order_by('id_Contacto','DESC');
+          $cont = $this->db->get('contactos');
+          return $cont->result();
     }
 /**
  * La función elimina un registro seleccionado de contactos ubicandolo por medio del campo "id_Contacto".
@@ -46,7 +88,7 @@ class Contacto_Mdl extends CI_Model{
     public function eliminarContacto($c){
         $data = array('id_Contacto'=>$c);
         $this->db->where($data);
-        $c = $this->db->delete('Contactos');
+        $c = $this->db->delete('contactos');
     }
 }
 ?>

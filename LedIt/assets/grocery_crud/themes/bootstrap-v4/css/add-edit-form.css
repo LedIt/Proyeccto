@@ -20,11 +20,22 @@
   margin-top: 7px;
 }
 
-.report-div {
-  padding: 10px 15px 1px 15px;
-  margin: 0px 4px;
-  font-weight: bold;
+
+.report-div.error
+{
+  border-color: red;
+  background-color: transparent;
 }
+.report-div.error p
+{
+  background: url(images/error.png) no-repeat left center;
+  margin: 0px !important;
+  padding: 10px 0px 10px 25px !important;
+  color: #a94442;
+  font-size: 15px;
+}
+
+
 
 /* Extra CSS for some plugins */
 .ui_tpicker_hour_label, .ui_tpicker_minute_label, .ui_tpicker_second_label {
@@ -36,3 +47,37 @@
 select.chosen-select {
   min-width: 100px;
 }
+
+
+
+{
+  padding:0px;
+  margin:0px;
+}
+
+
+.report-div
+{
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display:none;
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+.report-div.error
+{
+  border-color: red;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,17 @@
+
+<?php
+$id=$this->session->userdata('id');
+$perfil=$this->session->userdata('perfil');
+$usuario=$this->session->userdata('usuario');
+
+if(!$id){
+  redirect('Admin/index/12');
+  }
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,11 +40,12 @@
     <link href="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="<?=base_url();?>libraries/libraries-backend/build/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/css/main2.css">
+    
+  <script type="text/javascript" src="<?=base_url();?>libraries/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script type="text/javascript" src="<?=base_url();?>libraries/sweetalert2/dist/jquery-1.11.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="<?=base_url();?>libraries/sweetalert2/dist/sweetalert2.min.css">
 
-    <?php
-if (!$this->session->has_userdata('usuarios')) {
-}
-?>
   </head>
 
   <body class="nav-md">
@@ -39,7 +54,7 @@ if (!$this->session->has_userdata('usuarios')) {
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="<?=base_url();?>index.php/controlBackEnd/index/2" class="site_title"><i class="fa fa-lightbulb-o"></i> <span><img style="margin-left: 5%;" width="30%" src="<?=base_url();?>libraries/libraries-backend/images/ledit.png"></span></a>
+              <a href="<?=base_url();?>Admin/index/2" class="site_title"><i class="fa fa-lightbulb-o"></i><span><img style="margin-left: 5%;" width="40%" src="<?=base_url();?>libraries/libraries-backend/images/ledit.png"></span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -47,49 +62,68 @@ if (!$this->session->has_userdata('usuarios')) {
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?=base_url();?>libraries/libraries-backend/images/img.jpg" alt="..." class="img-circle profile_img">
+                <?php
+                if(!$perfil){
+                ?>  
+                  <img src="<?=base_url().'libraries/libraries-backend/images/thumbnails/ledit.png'.$this->session->userdata('perfil');?>" class="img-circle profile_img">
+                <?php  
+                  }elseif ($perfil) {
+                ?>    
+                  <img src="<?=base_url().'libraries/libraries-backend/images/thumbnails/usuarios/'.$this->session->userdata('perfil');?>" class="img-circle profile_img">
+                <?php    
+                  }
+                ?>
+
               </div>
               <div class="profile_info">
                 <span>Bienvenido,</span>
-                <h2><?=$this->session->userdata('usuarios').$this->session->userdata('id');?></h2>
+                <h2><?=$this->session->userdata('nombre');?></h2>
               </div>
 
-                <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-                  <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?=base_url();?>index.php/Usuario/logout"">
-                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                  </a>
-                </div>
+                
                 <!-- /menu footer buttons -->
             </div>
+            <br>
             <!-- /menu profile quick info -->
-
-            <br />
-
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-sitemap"></i> Panel de control <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-clone"></i> Dashboard <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a class="" href="<?=base_url();?>index.php/controlBackEnd/index/2">Ventas</a></li>
-                      <li><a class="" href="<?=base_url();?>index.php/controlBackEnd/index/7">Productos</a></li>
-                      <li><a class="" href="<?=base_url();?>index.php/controlBackEnd/index/2">Contactos</a></li>
-                      <li><a class="" href="<?=base_url();?>index.php/controlBackEnd/index/4">FAQ'S</a></li>
-                      <li><a class="" href="<?=base_url();?>index.php/controlBackEnd/index/6">Usuarios</a></li>
-                      <li><a class="" href="<?=base_url();?>index.php/controlBackEnd/index/3">Galería</a></li>
-                      <li><a class="" href="<?=base_url();?>index.php/controlBackEnd/index/5">Noticias</a></li>
-                      <li><a class="" href="<?=base_url();?>index.php/controlBackEnd/index/8">Categorías</a></li>
-                      <li><a class="" href="<?=base_url();?>index.php/Pdfs/datos_bd">Generar Reporte de ventas</a></li>
+                             <?php 
+                          if ($usuario==1 || $usuario==2) {
+                        ?>    
+                        <li><a class="" href="<?=base_url();?>Admin/index/2">Ventas</a></li>
+                        <li><a class="" href="<?=base_url();?>Admin/index/9">Contactos&nbsp;&nbsp;<span class="badge bg-green">2</span></a></li>
+                        <?php    
+                          }else{ 
+                        ?>
+                        <?php    
+                          }
+                        ?>
+                      
+                      <li><a class="" href="<?=base_url();?>Admin/index/7">Productos</a></li>
+                      <li><a class="" href="<?=base_url();?>Admin/index/8">Categorías</a></li>
+                        <?php 
+                          if ($usuario==1 || $usuario==2) {
+                        ?>    
+                          <li><a class="" href="<?=base_url();?>Admin/index/6">Usuarios</a></li>
+                        <?php    
+                          }else{ 
+                        ?>
+                        <?php    
+                          }
+                        ?> 
+                      <li><a class="" href="<?=base_url();?>Admin/index/3">Galería</a></li>
+                      <li><a class="" href="<?=base_url();?>Admin/index/4">FAQ'S</a></li>
+                      <li><a class="" href="<?=base_url();?>Admin/index/5">Noticias</a></li>
                     </ul>
                   </li>
                 </ul>
               </div>
-
             </div>
             <!-- /sidebar menu -->
-
-          
           </div>
         </div>
 
@@ -98,18 +132,55 @@ if (!$this->session->has_userdata('usuarios')) {
           <div class="nav_menu">
             <nav>
               <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                <a title="Ocultar/Mostrar" id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
-
               <ul class="nav navbar-nav navbar-right">
+
+                 
+
                 <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?=base_url();?>libraries/libraries-backend/images/img.jpg" alt=""><?=$this->session->userdata('usuarios').$this->session->userdata('id');?>
+                  <a title="Opciones de sesión"  href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                     <?php
+                if(!$perfil){
+                ?>  
+                   <img src="<?=base_url().'libraries/libraries-backend/images/thumbnails/ledit.png'.$this->session->userdata('perfil');?>"><?=$this->session->userdata('correo');?>
                     <span class=" fa fa-angle-down"></span>
+                <?php  
+                  }elseif ($perfil) {
+                ?>    
+                   <img src="<?=base_url().'libraries/libraries-backend/images/thumbnails/usuarios/'.$this->session->userdata('perfil');?>"><?=$this->session->userdata('correo');?>
+                    <span class=" fa fa-angle-down"></span>
+                <?php    
+                  }
+                ?>
                   </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="<?=base_url();?>index.php/Usuario/logout""><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                <?php 
+                  if ($usuario==2) {
+                    $user1="Administrador";
+                ?>    
+                    <li><a><i class="fa fa-user pull-right"></i><?=$user1;?></a></li>
+                <?php
+                  }elseif ($usuario==3) {
+                       $user2="Usuario";
+                ?>
+                    <li><a><i class="fa fa-user pull-right"></i><?=$user2;?></a></li>
+                <?php    
+                  }else{
+                     $user3="Super Administrador";
+                ?>
+                    <li><a><i class="fa fa-user pull-right"></i><?=$user3;?></a></li>
+                <?php    
+                  }
+                ?> 
+                    <li><a title="Cerrar de sesión"  href="<?=base_url();?>Usuario/logout"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
                   </ul>
+                </li>
+
+
+                <li>
+                  <a class="hidden-xs hidden-sm" style="background-color: #7d7d7d; box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9);" href="<?=base_url();?>ControlFrontEnd/index/1"><i style="color: #fff;" class="fa fa-eye"></i><span style="color: #fff;"> Visualizar sitio</span></a>
                 </li>
 
               </ul>

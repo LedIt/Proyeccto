@@ -252,6 +252,7 @@ class grocery_CRUD_Field_Types
 
 		return $field_info;
 	}
+	
 
 	protected function change_list_value($field_info, $value = null)
 	{
@@ -1893,7 +1894,7 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 		$data->unique_hash			= $this->get_method_hash();
 		$data->is_ajax 			= $this->_is_ajax();
 
-		$this->_theme_view('add.php',$data);
+		$this->_theme_view('add.php',$data,'refresh');
 		$this->_inline_js("var js_date_format = '".$this->js_date_format."';");
 
 		$this->_get_ajax_results();

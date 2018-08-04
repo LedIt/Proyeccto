@@ -186,7 +186,7 @@ table tr th { color: #688a7e;}
 
     max-width: 350px;
 
-    margin: 150px auto 0;
+    margin: 105px auto 0;
 
     background: #d5d7de;
 
@@ -221,8 +221,15 @@ table tr th { color: #688a7e;}
 }
 
 .login-form a{
-
     color: #fff !important;
+    font-weight: normal;
+    border-radius: 20px;
+}
+
+
+.login-form a:hover {
+    color: #34aadc !important;
+    border-radius: 20px;
 
 }
 
@@ -348,6 +355,12 @@ table tr th { color: #688a7e;}
 
 }
 
+.login-form .btn:hover{
+
+    border-radius: 20px;
+
+}
+
 .login-form .btn-login {
 
     background: #f67a6e;
@@ -372,33 +385,19 @@ table tr th { color: #688a7e;}
 
     text-align: center;
 
-    color: #b6b6b6;
+    color: #007aff;
 
     font-size: 16px;
-
-    font-weight: 300;
 
 }
 
 .login-img3-body .login-form p,.login-img2-body .login-form p {
 
-    color: #34aadc;
-
-}
-
-.login-form a {
-
-    color: #b6b6b6;
+    color:#007aff;
 
 }
 
 
-
-.login-form a:hover {
-
-    color: #34aadc;
-
-}
 
 .form .required{
 

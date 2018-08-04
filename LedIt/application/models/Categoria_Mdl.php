@@ -23,7 +23,8 @@ class Categoria_Mdl extends CI_Model{
  * La función procesa los datos y ejecuta la consulta de listado de los registros de categorias en la base de datos (FrontEnd).
  */
     public function listarCategoriaFront(){
-        $cat = $this->db->get('categorias');
+    	$this->db->order_by('id_Categoria','DESC');
+        $cat = $this->db->get_where('categorias','id_Status_Categoria = 1');
         return $cat->result();
     }
 }

@@ -775,8 +775,8 @@
                             type: 'danger',
                             delay: 10000,
                             animate: {
-                                enter: 'animated bounceInDown',
-                                exit: 'animated bounceOutUp'
+                                enter: 'animated bounceInUp',
+                                exit: 'animated bounceOutDown'
                             }
                         });
                     }
@@ -788,6 +788,10 @@
 
         }.bind(this));
     };
+
+
+
+
 
     Datagrid.prototype.listenerDeleteRowClick = function ($delete_row_container) {
         var datagrid_object = this;
@@ -823,8 +827,8 @@
                                 type: 'success',
                                 delay: 10000,
                                 animate: {
-                                    enter: 'animated bounceInDown',
-                                    exit: 'animated bounceOutUp'
+                                    enter: 'animated bounceInUp',
+                                    exit: 'animated bounceOutDown'
                                 }
                             });
                         } else {
@@ -851,6 +855,9 @@
 
         });
     };
+
+
+
 
     Datagrid.prototype.listenerLoadMoreButton = function () {
         var datagrid_object = this;

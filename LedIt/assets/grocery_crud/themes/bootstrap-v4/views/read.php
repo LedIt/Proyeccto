@@ -19,24 +19,24 @@ if ($this->config->environment == 'production') {
 include(__DIR__ . '/common_javascript_vars.php');
 ?>
 <div class="crud-form" data-unique-hash="<?php echo $unique_hash; ?>">
-    <div class="gc-container">
+    <div style="box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9); border-radius: 20px;" class="gc-container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="table-label">
-                    <div class="floatL l5">
-                        <?php echo $this->l('list_view'); ?> <?php echo $subject?>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div style="box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9); border-top-right-radius: 20px; border-top-left-radius: 20px; background-color: #0a1123;" class="table-label">
+                    <div align="center">
+                        <?php echo "<h3 style='color:#fff; font-size:30px;'>Información del registro</h3>" ;?>
                     </div>
                     <div class="clear"></div>
                 </div>
-                <div class="form-container table-container">
+                <div style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; color: #0a1123;" class="form-container table-container">
                     <?php echo form_open( $update_url, 'method="post" id="crudForm"  enctype="multipart/form-data"'); ?>
 
                     <?php foreach($fields as $field) { ?>
-                        <div class="form-group row">
-                            <label class="col-sm-3 control-label">
+                        <div style="color: #0a1123;"  class="form-group row">
+                            <label class="col-sm-6 control-label">
                                 <?php echo $input_fields[$field->field_name]->display_as?>:
                             </label>
-                            <div class="col-sm-9 read-row">
+                            <div class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
                                 <?php echo $input_fields[$field->field_name]->input; ?>
                             </div>
                         </div>
@@ -56,12 +56,12 @@ include(__DIR__ . '/common_javascript_vars.php');
                         <div id='report-error' class='report-div error'></div>
                         <div id='report-success' class='report-div success'></div>
                     </div>
-
+                    <hr>
                     <div class="form-group gcrud-form-group">
-                        <div class="col-sm-offset-3 col-sm-7">
+                        <div class="col-sm-offset-5 col-sm-8">
                             <?php 	if(!$this->unset_back_to_list) { ?>
-                                <button class="btn btn-secondary cancel-button" type="button" onclick="window.location = '<?php echo $list_url; ?>'" >
-                                    <i class="el el-return-key"></i>
+                                <button class="btn btn-danger cancel-button" type="button" onclick="window.location = '<?php echo $list_url; ?>'" >
+                                    <i><img src="<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/images/close.png"></i>
                                     <?php echo $this->l('form_back_to_list'); ?>
                                 </button>
                             <?php } ?>

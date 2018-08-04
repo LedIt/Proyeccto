@@ -15,28 +15,24 @@ foreach($css_files as $file): ?>
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Users <small>Some examples to get you started</small></h3>
               </div>
               </div>
             </div>
             <div class="clearfix"></div>
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Default Example <small>Users</small></h2>
-                    
+                <div style="background-color: ;  box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9); border-bottom-right-radius: 20px; border-bottom-left-radius: 20px" class="x_panel">
+                  <div class="x_title">  
+                   <h3>Usuarios <small>Listado de registros</small></h3>               
                     <div class="clearfix"></div>
-
-
-                     <?php echo $output; ?>
                   </div>
+                  <?php echo $output; ?>
                 </div>
               </div>
             </div>
           </div>
         <!-- /page content -->
-    </div>
+  </div>
     <?php foreach($js_files as $file): ?>
         <script src="<?=$file; ?>"></script>
     <?php endforeach; ?>
@@ -70,6 +66,8 @@ foreach($css_files as $file): ?>
     <script src="<?=base_url();?>libraries/libraries-backend/build/js/custom.min.js"></script>
 </body>
 </html>
+
+ 
 
  
     

@@ -20,24 +20,24 @@
 include(__DIR__ . '/common_javascript_vars.php');
 ?>
 <div class="crud-form" data-unique-hash="<?php echo $unique_hash; ?>">
-    <div class="gc-container">
+    <div style="box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9); border-radius: 20px;" class="gc-container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="table-label">
-                    <div class="floatL l5">
-                        <?php echo $this->l('form_edit'); ?> <?php echo $subject?>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div style="box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9); border-top-right-radius: 20px; border-top-left-radius: 20px; background-color: #0a1123;" class="table-label">
+                    <div align="center">
+                        <?php echo "<h3 style='color:#fff; font-size:30px;'>Actualizar Información</h3>" ;?>
                     </div>
                     <div class="clear"></div>
                 </div>
-                <div class="form-container table-container">
+                <div style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px" class="form-container table-container">
                     <?php echo form_open( $update_url, 'method="post" id="crudForm"  enctype="multipart/form-data"'); ?>
 
                     <?php foreach($fields as $field) { ?>
-                        <div class="form-group <?php echo $field->field_name; ?>_form_group row">
-                            <label class="col-sm-3 control-label">
-                                <?php echo $input_fields[$field->field_name]->display_as?><?php echo ($input_fields[$field->field_name]->required)? "<span class='required'>*</span> " : ""?>
+                        <div style="color: #0a1123;" class="form-group <?php echo $field->field_name; ?>_form_group row">
+                            <label class="col-sm-4 control-label">
+                                <?php echo $input_fields[$field->field_name]->display_as?><?php echo ($input_fields[$field->field_name]->required)? "<span class='required'> : </span> " : ":"?>
                             </label>
-                            <div class="col-sm-9">
+                            <div style="text-decoration-color: #000;" class="col-sm-6 col-xs-12 col-md-6 col-lg-6">
                                 <?php echo $input_fields[$field->field_name]->input; ?>
                             </div>
                         </div>
@@ -57,19 +57,20 @@ include(__DIR__ . '/common_javascript_vars.php');
                         <div id='report-error' class='report-div error bg-danger' style="display:none"></div>
                         <div id='report-success' class='report-div success bg-success' style="display:none"></div>
                     </div>
+                    <hr>
                     <div class="form-group gcrud-form-group">
-                        <div class="col-sm-offset-3 col-sm-7">
+                        <div class="col-sm-offset-3 col-xs-10 col-lg-10 col-md-10">
                             <button class="btn btn-secondary btn-success b10" type="submit" id="form-button-save">
-                                <i class="el el-ok"></i>
+                                <i><img src="<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/images/success.png"></i>
                                 <?php echo $this->l('form_update_changes'); ?>
                             </button>
                             <?php 	if(!$this->unset_back_to_list) { ?>
                                 <button class="btn btn-info b10" type="button" id="save-and-go-back-button">
-                                    <i class="el el-return-key"></i>
+                                    <i><img src="<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/images/first.gif"></i>
                                     <?php echo $this->l('form_update_and_go_back'); ?>
                                 </button>
-                                <button class="btn btn-secondary cancel-button b10" type="button" id="cancel-button">
-                                    <i class="el el-warning-sign"></i>
+                                <button class="btn btn-danger cancel-button b10" type="button" id="cancel-button">
+                                    <i><img src="<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/images/close.png"></i>
                                     <?php echo $this->l('form_cancel'); ?>
                                 </button>
                             <?php } ?>

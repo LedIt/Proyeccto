@@ -34,7 +34,7 @@
 	$lang['form_save'] 				= 'Guardar';
 	$lang['form_insert_loading'] 	= 'Cargando, guardando los datos...';
 
-	$lang['form_upload_a_file'] 	= 'Subir un archivo';
+	$lang['form_upload_a_file'] 	= 'Seleccionar imagen';
 	$lang['form_upload_delete'] 	= 'eliminar';
 	$lang['form_button_clear'] 		= 'Resetear';
 
@@ -86,12 +86,12 @@
 	$lang['list_more'] = 'Mas';
 
 	/* Added in version 1.5.6 */
-	$lang['list_search_column'] = 'Search {column_name}';
+	$lang['list_search_column'] = 'Buscar {column_name}';
 
 	/* Added in version 1.5.8 */
-	$lang['alert_delete_multiple'] = 'Are you sure that you want to delete those {items_amount} items?';
+	$lang['alert_delete_multiple'] = '¿Desea eliminar {items_amount} registros seleccionados?';
 
-	$lang['alert_delete_multiple_one'] = 'Are you sure that you want to delete this 1 item?';
+	$lang['alert_delete_multiple_one'] = '¿Desea eliminar este registro?';
 
 
 

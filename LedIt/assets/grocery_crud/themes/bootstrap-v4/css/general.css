@@ -1,3 +1,34 @@
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/elusive-icons/fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/elusive-icons/fonts/poppins/Poppins-Medium.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/elusive-icons/fonts/poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url('<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/elusive-icons/fonts/poppins/Poppins-SemiBold.ttf'); 
+}
+
+
+body, html {
+  height: 100%;
+  font-family: Poppins-Regular, sans-serif;
+}
+
 /* ------------------------------------------------------------------ */
 /* ------------------ General CSS Styling --------------------------- */
 /* ------------------------------------------------------------------ */
@@ -37,8 +68,8 @@ table.no-border-table tr td,.no-border{border: none !important}
 
 div.invisible,.invisible{opacity:0}
 
-.loading-opacity{opacity: 0.5;pointer-events: none;cursor: default;}
-.loading-opacity:before {font-size: 26px;position:absolute;color: #000;content: "Loading...";margin-left: 550px;z-index: 1000;}
+.loading-opacity{opacity: 0.6;pointer-events: none;cursor: default;}
+.loading-opacity:before {font-size: 50px;position:absolute; color: #7d7d7d; content: "Cargando..."; margin-left: 350px; margin-top: -100px; z-index: 1000;}
 
 /* ------------------------------------------------------------------ */
 /* ------------------------------------------------------------------ */

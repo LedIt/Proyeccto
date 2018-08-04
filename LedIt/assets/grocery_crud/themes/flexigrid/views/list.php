@@ -3,7 +3,8 @@
 	$column_width = (int)(80/count($columns));
 	
 	if(!empty($list)){
-?><div class="bDiv" >
+?>
+<div class="bDiv" >
 		<table cellspacing="0" cellpadding="0" border="0" id="flex1">
 		<thead>
 			<tr class='hDiv'>
@@ -25,6 +26,9 @@
 			</tr>
 		</thead>		
 		<tbody>
+
+
+
 <?php foreach($list as $num_row => $row){ ?>        
 		<tr  <?php if($num_row % 2 == 1){?>class="erow"<?php }?>>
 			<?php foreach($columns as $column){?>
@@ -72,6 +76,9 @@
 		</tbody>
 		</table>
 	</div>
+
+
+
 <?php }else{?>
 	<br/>
 	&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $this->l('list_no_items'); ?>

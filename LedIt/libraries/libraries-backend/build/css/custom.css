@@ -1,3 +1,4 @@
+
 .x_title h2,table.tile_info td p {
  white-space:nowrap;
  text-overflow:ellipsis
@@ -130,7 +131,7 @@
  padding:0 0 4px
 }
 .left_col {
- background:#2A3F54
+ background:#0a1123;
 }
 .nav-sm .container.body .col-md-3.left_col {
  min-height:100%;
@@ -243,14 +244,12 @@
  float:left
 }
 .img-circle.profile_img {
- width:70%;
- background:#fff;
+ width:90%;
  margin-left:15%;
  z-index:1000;
  position:inherit;
  margin-top:20px;
- border:1px solid rgba(52,73,94,.44);
- padding:4px
+ 
 }
 .profile_info {
  padding:25px 10px 10px;
@@ -328,9 +327,11 @@
  height:100%;
  position:fixed
 }
+
 body .container.body .right_col {
  background:#F7F7F7
 }
+
 .nav-md .container.body .right_col {
  padding:10px 20px 0;
  margin-left:230px
@@ -338,7 +339,7 @@ body .container.body .right_col {
 .nav_title {
  width:230px;
  float:left;
- background:#2A3F54;
+ background:#0a1123;
  border-radius:0;
  height:57px
 }
@@ -459,7 +460,7 @@ body .container.body .right_col {
 }
 body {
  color:#73879C;
- background:#2A3F54;
+ background:#0a1123;
  font-family:"Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
  font-size:13px;
  font-weight:400;
@@ -705,7 +706,7 @@ a {
  display:block;
  height:55px;
  margin:0;
- padding-left:10px
+ padding-left:20%;
 }
 .nav.navbar-nav>li>a {
  color:#515356!important
@@ -2125,18 +2126,61 @@ input.parsley-error,select.parsley-error,textarea.parsley-error {
  font-weight:bolder
 }
 .btn {
- border-radius:3px
+ border-radius:0px;
 }
+
 a.btn-danger,a.btn-primary,a.btn-success,a.btn-warning {
  color:#fff
 }
+
+
+
+/*Boton de gardado/grocery-crud*/
 .btn-success {
- background:#26B99A;
- border:1px solid #169F85
+ background: green;
+ color: #fff;
+ border:1px solid green;
+    --webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
 }
+
 .btn-success.active,.btn-success:active,.btn-success:focus,.btn-success:hover,.open .dropdown-toggle.btn-success {
- background:#169F85
+ background: green;
+ color: #fff;
+ border:1px solid green;
+ border-radius: 20px;
+    --webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    box-shadow: 0px 0px 10px -1px rgba(10,17,35,0.9);
+
 }
+
+
+/*Boton de gardado/grocery-crud*/
+.btn-success2 {
+ background: green;
+ color: #fff;
+ border:1px solid green;
+    --webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+
+.btn-success2.active,.btn-success2:active,.btn-success2:focus,.btn-success2:hover,.open .dropdown-toggle.btn-success2 {
+ background: green;
+ color: #fff;
+ border:1px solid green;
+ border-radius: 20px;
+    --webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+      box-shadow: 0px 0px 10px -3px rgba(255,255,255,0.9);
+}
+
+
+
+
+
+
+
 .btn-dark {
  color:#E9EDEF;
  background-color:#4B5F71;
@@ -3735,8 +3779,8 @@ ul.verticle_bars li {
 }
 .alert-success {
  color:#fff;
- background-color:rgba(38,185,154,.88);
- border-color:rgba(38,185,154,.88)
+ background-color:rgba(0,128,0,.88);
+ border-color:rgba(0,128,0,.88)
 }
 .alert-info {
  color:#E9EDEF;

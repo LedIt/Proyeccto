@@ -54,6 +54,7 @@
                         <div class="single-testimonial-slide text-center">
                             <h5><?=$faq->pregunta_Faq;?></h5>
                             <p><?=$faq->respuesta_Faq;?></p>
+                            <p><?=$faq->id_Status_Faq;?></p>
                             <div class="testimonial-author-info">
                                 <img src="<?=base_url();?>libraries/img/bg-img/s2.jpg" alt="">
                                 <p>Led It<span></span></p>

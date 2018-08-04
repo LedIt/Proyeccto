@@ -1,6 +1,6 @@
 
 <!-- ##### Footer Area Start ##### -->
-    <footer class=" wow fadeInUp footer-area section-padding-100-0 bg-img gradient-background-overlay" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s1.jpg);">
+    <footer class=" wow fadeInUp footer-area section-padding-100-0 bg-img gradient-background-overlay" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s1.jpg);" data-delay="600ms">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
@@ -34,10 +34,11 @@
                             </div>
                             <!-- Office Hours -->
                             <div class="weekly-office-hours">
-                                <?php
-                            $data = array('10' => 'https://www.codeigniter.com/user_guide/libraries/calendar.html');
-                              echo $this->calendar->generate(2018,7,$data);
-                            ?>      
+                                <ul>
+                                    <li class="d-flex align-items-center justify-content-between"><span><strong>Lunes - Viernes</strong></span><span>09:00 AM - 6:00 PM</span></li>
+                                    <li class="d-flex align-items-center justify-content-between"><span><strong>Sábado<strong></strong></span><span>09:00 AM - 5:00 PM</span></li>
+                                    <li class="d-flex align-items-center justify-content-between"><span><strong>Domingo<strong></span><span>09:00 AM - 03:00 PM</span></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -54,6 +55,13 @@
     </footer>
     <!-- ##### Footer Area End ##### -->
 
+
+<!--===============================================================================================-->
+<script src="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+  <script src="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/js/main.js"></script>
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="<?=base_url();?>libraries/js/jquery/jquery-2.2.4.min.js"></script>

@@ -15,11 +15,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * La clase extiende o hereda de "CI_Controller" el cual servira para cargar las diferentes vistas.
  */
-class controlFrontEnd extends CI_Controller {
+class ControlFrontEnd extends CI_Controller {
     function __construct(){
         parent:: __construct();
         $this->load->model('Faq_Mdl');
         $this->load->model('Noticia_Mdl');
+        $this->load->library('session');
+        $this->load->helper('url');
         $this->load->model('Usuario_Mdl');
         $this->load->model('Galeria_Mdl');
         $this->load->model('Producto_Mdl');
@@ -28,20 +30,10 @@ class controlFrontEnd extends CI_Controller {
 /**
  * Función que ayuda a navegar entre las views del FrontEnd.
  */
-public function calendario(){
-		$config['start_day'] = 'Monday';
-
-		$this->load->library('calendar', $config);
-		$data['titulo']='Libreria Calendar';
-		$data['contenido']='Calendario';
-
-		
-		$this->load->view('frontend/template/footer', $data);
-	}
-
 	public function index($option = 1)
 	{
-		$this->load->view('frontend/template/header');
+		$data['categorias'] =$this->Categoria_Mdl->ListarCategoriaFront();
+		$this->load->view('frontend/template/header',$data);
 		Switch ($option){
 		    case 1:
 			    $data['productos'] =$this->Producto_Mdl->ListarProductoFront();
@@ -70,6 +62,7 @@ public function calendario(){
 
 		    case 6:
 			    $this->load->view('frontend/contacto_vw');
+			    
 			    break;
 
 		    case 8:

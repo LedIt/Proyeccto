@@ -23,8 +23,9 @@ class Galeria_Mdl extends CI_Model{
  * La función procesa los datos y ejecuta la consulta de listado de los registros de galería en la base de datos (FrontEnd).
  */
     public function listarGaleriaFront(){
-        $gal = $this->db->get('galeria');
-        return $gal->result();
+       $this->db->order_by('id_Galeria','DESC');
+       $gal = $this->db->get_where('galeria','id_Status_Galeria = 1');
+       return $gal->result();
     }
 }
 ?>

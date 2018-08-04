@@ -23,8 +23,9 @@ class Noticia_Mdl extends CI_Model{
  * La función procesa los datos y ejecuta la consulta de listado de los registros de noticias en la base de datos (FrontEnd).
  */
     public function listarNoticiaFront(){
-        $noti = $this->db->get('noticias');
-        return $noti->result();
+       $this->db->order_by('id_Noticia','DESC');
+       $noti = $this->db->get_where('noticias','id_Status_Noticia = 1');
+       return $noti->result();
     }
 }
 ?>

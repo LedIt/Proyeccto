@@ -102,105 +102,118 @@
         <?php }
         ?></div>
 
- 		<div class="row">
-        	<div class="table-section">
-                <div class="table-label">
-                    <div class="floatL l5">
-                        <?php echo $subject_plural; ?>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="table-container">
-                    <?php echo form_open("", 'method="post" autocomplete="off" id="gcrud-search-form"'); ?>
-                        <div class="header-tools">
+        <div class="row">
+            <div style="box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9); border-radius: 20px;" class="table-section">
+                <div style="box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9); border-top-right-radius: 20px; border-top-left-radius: 20px; background-color: #0a1123;" class="table-label">
+                    <div align="center">
+                                <div style="box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9); border-radius: 20px; border-color: #0a1123;"  class="header-tools">
                             <?php if(!$unset_add){?>
                                 <div class="floatL t5">
-                                    <a class="btn btn-default btn-outline-dark" href="<?php echo $add_url?>">
-                                        <i class="el el-plus"></i> &nbsp; <?php echo $this->l('list_add'); ?> <?php echo $subject?>
+                                    <a id="a1" class="btn btn-success2 btn-outline-dark" href="<?php echo $add_url?>">
+                                        <img src="<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/images/add.png"> &nbsp; <?php echo $this->l('list_add'); ?> <?php echo $subject?>
                                     </a>
                                 </div>
                             <?php } ?>
+
+
                             <div class="floatR">
                                 <?php if(!$unset_export) { ?>
-                                    <a class="btn btn-default btn-outline-dark t5 gc-export" data-url="<?php echo $export_url; ?>" href="javascript:;">
-                                        <i class="el el-share floatL t3"></i>
-                                        <span class="hidden-xs floatL l5">
+                                    <a id="a2" class="btn btn-warning btn-outline-dark t5 gc-export" data-url="<?php echo $export_url; ?>" href="javascript:;">
+                                        <span class="floatL l5">
+                                            <img src="<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/images/clone.png">
                                             <?php echo $this->l('list_export');?>
                                         </span>
                                         <div class="clear"></div>
                                     </a>
                                 <?php } ?>
-                                <?php if(!$unset_print) { ?>
-                                    <a class="btn btn-default btn-outline-dark t5 gc-print" data-url="<?php echo $print_url; ?>" href="javascript:;">
-                                        <i class="el el-print floatL t3"></i>
-                                        <span class="hidden-xs floatL l5">
-                                            <?php echo $this->l('list_print');?>
-                                        </span>
-                                        <div class="clear"></div>
-                                    </a>
-                                <?php }?>
+
 
                                 <a class="btn btn-primary search-button t5" href="javascript:;">
-                                    <i class="el el-search"></i>
-                                    <input type="text" name="search" class="search-input" />
+                                    <img src="<?=base_url();?>assets/grocery_crud/themes/bootstrap-v4/css/images/magnifier.png">
+                                    <input type="text" name="search" class="search-input" placeholder="Buscar" />
                                 </a>
                             </div>
+
+
+
                             <div class="clear"></div>
                         </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px" class="table-container">
+                    <?php echo form_open("", 'method="post" autocomplete="off" id="gcrud-search-form"'); ?>
+
                         <div class="scroll-if-required">
-        			        <table class="table table-bordered grocery-crud-table table-hover">
-        					<thead>
-        						<tr>
-        							<th colspan="2" <?php if ($buttons_counter === 0) {?>class="hidden"<?php }?>>
+                            <table class="table table-responsive grocery-crud-table table-hover">
+                            <thead>
+                             <tr style="border-top: 1px solid ">
+                                <th style="text-align: center; color: #0a1123;" colspan="2" <?php if ($buttons_counter === 0) {?>class="hidden"<?php }?>>
                                         <?php echo $this->l('list_actions'); ?>
                                     </th>
+
                                     <?php foreach($columns as $column){?>
-                                        <th class="column-with-ordering" data-order-by="<?php echo $column->field_name; ?>"><?php echo $column->display_as; ?></th>
+                                        <th style="text-align: center; color: #0a1123;" class="column-with-ordering" data-order-by="<?php echo $column->field_name; ?>"><?php echo $column->display_as; ?></th>
                                     <?php }?>
-        						</tr>
-        						
-        						<tr class="filter-row gc-search-row">
-        							<td class="no-border-right <?php if ($buttons_counter === 0) {?>hidden<?php }?>">
+                                </tr>
+                                
+
+                                <tr class="filter-row gc-search-row">
+                                    <td class="no-border-right <?php if ($buttons_counter === 0) {?>hidden<?php }?>">
                                         <?php if (!$unset_delete) { ?>
-            							     <div class="floatL t5">
-            							         <input type="checkbox" class="select-all-none" />
-            							     </div>
+
+                                             <div class="floatL t5 settings-button-container">
+                                                <span>Múltiple</span>
+                                                 <input title="Selección múltiple (Eliminar)" type="checkbox" class="select-all-none" />
+
+
+                                             </div>
                                          <?php } ?>
-        							 </td>
-        							<td class="no-border-left <?php if ($buttons_counter === 0) {?>hidden<?php }?>">
+                                     </td>
+
+
+
+                                    <td class="no-border-left ">
                                         <div class="floatL">
                                             <a href="javascript:void(0);" title="<?php echo $this->l('list_delete')?>"
-                                               class="hidden btn btn-outline-dark delete-selected-button">
-                                                <i class="el el-remove text-danger"></i>
-                                                <span class="text-danger"><?php echo $this->l('list_delete')?></span>
+                                               class="hidden btn btn-outline-dark delete-selected-button settings-button-container">
+                                                <i class="el el-trash text-danger"></i>
+                                                <span style="font-size: 13px;" class="text-danger"><?php echo "Eliminar";?></span>
+                                        
                                             </a>
                                         </div>
-                                        <div class="floatR l5">
-                                            <a href="javascript:void(0);" class="btn btn-default btn-outline-dark gc-refresh">
-                                                <i class="el el-refresh"></i>
-                                            </a>
-                                        </div>
+
+                                         <!-- Start of: Settings button -->
+                                                <div class="btn-group floatR l5 settings-button-container">
+                                                    <button title="Borrar filtro de búsqueda" type="button" class="btn btn-default  settings-button gc-bootstrap-dropdown dropdown-toggle">
+                                                        <span class="caret"></span>
+                                                    </button>
+
+                                                    <div style="border: 1px solid #0a1123 ;" class="dropdown-menu dropdown-menu-right">
+                                                        <a style="color:#0a1123 ; font-size: 14px;" href="javascript:void(0)" class="clear-filtering dropdown-item">
+                                                            <i class="el el-refresh"></i> Borrar filtro de búsqueda
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!-- End of: Settings button -->
+
                                         <div class="clear"></div>
-                                    </td>
-                                    <?php foreach($columns as $column){?>
+                                        </td>
+                                         <?php foreach($columns as $column){?>
                                         <td>
-                                            <input
-                                                type="text"
-                                                class="form-control searchable-input floatL"
-                                                placeholder="<?php echo str_replace('{column_name}', $column->display_as, $search_column_string); ?>"
-                                                name="<?php echo $column->field_name; ?>" />
+                                            <input  type="text" class="form-control searchable-input floatL settings-button-container" placeholder='<?php echo str_replace('{column_name}', "por"." ".$column->display_as, $search_column_string); ?>'  name="<?php echo $column->field_name; ?>" />
                                         </td>
                                     <?php }?>
-        						</tr>
-
-        					</thead>
-        					<tbody>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 <?php include(__DIR__."/list_tbody.php"); ?>
-        					</tbody>
+                            </tbody>
                             </table>
                         </div>
+                        <hr>
                             <!-- Table Footer -->
-        					<div class="footer-tools">
+                            <div class="">
 
                                             <!-- "Show 10/25/50/100 entries" (dropdown per-page) -->
                                             <div class="floatL t20 l5">
@@ -260,21 +273,7 @@
 
                                                 <input type="hidden" name="page_number" class="page-number-hidden" value="1" />
 
-                                                <!-- Start of: Settings button -->
-                                                <div class="btn-group floatR t20 l10 settings-button-container">
-                                                    <button type="button" class="btn btn-default btn-outline-dark settings-button gc-bootstrap-dropdown dropdown-toggle">
-                                                        <i class="el el-cog r5"></i>
-                                                        <span class="caret"></span>
-                                                    </button>
-
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="javascript:void(0)" class="clear-filtering dropdown-item">
-                                                            <i class="el el-eraser"></i> Clear filtering
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <!-- End of: Settings button -->
-
+                                              
                                             </div>
 
 
@@ -297,22 +296,23 @@
 
                     <?php echo form_close(); ?>
                 </div>
-        	</div>
+            </div>
 
             <!-- Delete confirmation dialog -->
-            <div class="delete-confirmation modal fade">
+            <div style="margin-top: 12%; margin-left: 5%; border-top-right-radius: 5px; border-top-left-radius: 5px;" class="delete-confirmation modal fade">
                 <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title"><?php echo $this->l('list_delete'); ?></h5>
+                    <div style="border-top-right-radius: 10px; border-top-left-radius: 10px;"class="modal-content">
+                        <div style="background-color: #0a1123;  border-top-right-radius: 6px; border-top-left-radius: 6px;" class="modal-header">
+                            <h3 style="color: #fff;" class="modal-title"><?php echo $this->l('list_delete'); ?></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <p><?php echo $this->l('alert_delete'); ?></p>
+                            <p align="center" style="color: #000; font-size: 17px;"><?php echo $this->l('alert_delete'); ?></p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $this->l('form_cancel'); ?></button>
-                            <button type="button" class="btn btn-danger delete-confirmation-button"><?php echo $this->l('list_delete'); ?></button>
+                            <button type="button" class="btn btn-default2" data-dismiss="modal"><i class="el el-danger"></i>&nbsp;<?php echo $this->l('form_cancel'); ?></button>
+                           
+                            <button type="button" class="btn btn-danger delete-confirmation-button"><i class="el el-trash"></i>&nbsp;<?php echo $this->l('list_delete');?></button>
                         </div>
                     </div>
                 </div>
@@ -320,15 +320,15 @@
             <!-- End of Delete confirmation dialog -->
 
             <!-- Delete Multiple confirmation dialog -->
-            <div class="delete-multiple-confirmation modal fade">
+            <div style="margin-top: 12%; margin-left: 5%;" class="delete-multiple-confirmation modal fade">
                 <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title"><?php echo $this->l('list_delete'); ?></h5>
+                    <div style="border-top-right-radius: 10px; border-top-left-radius: 10px;" class="modal-content">
+                        <div  style="background-color: #0a1123;  border-top-right-radius: 6px; border-top-left-radius: 6px;" class="modal-header">
+                            <h3 style="color: #fff;" class="modal-title"><?php echo "Eliminar múltiple"; ?></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <p class="alert-delete-multiple hidden">
+                            <p align="center" style="color: #000; font-size: 17px;" class="alert-delete-multiple hidden">
                                 <?php echo str_replace('{items_amount}', '<span class="delete-items-amount"></span>', $alert_multiple_delete); ?>
                             </p>
                             <p class="alert-delete-multiple-one hidden">
@@ -336,11 +336,11 @@
                             </p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            <button type="button" class="btn btn-default2" data-dismiss="modal">
                                 <?php echo $this->l('form_cancel'); ?>
                             </button>
                             <button type="button" class="btn btn-danger delete-multiple-confirmation-button"
-                                    data-target="<?php echo $delete_multiple_url; ?>">
+                                    data-target="<?php echo $delete_multiple_url; ?>"><i class="el el-trash"></i>&nbsp;
                                 <?php echo $this->l('list_delete'); ?>
                             </button>
                         </div>
