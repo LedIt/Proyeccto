@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-07-2018 a las 06:09:57
+-- Tiempo de generación: 30-07-2018 a las 04:32:46
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -36,6 +36,13 @@ CREATE TABLE `categorias` (
   `id_Status_Categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id_Categoria`, `nombre_Categoria`, `imagen_Categoria`, `descripcion_Categoria`, `id_Status_Categoria`) VALUES
+(2, 'asxsa', '9ebc5-david-20180724_011512.jpg', 'asxsa', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -56,19 +63,26 @@ CREATE TABLE `contactos` (
 --
 
 INSERT INTO `contactos` (`id_Contacto`, `nombre_Contacto`, `telefono_Contacto`, `email_Contacto`, `mensaje_Contacto`, `fecha_Contacto`) VALUES
-(12, 'Miguel Angel Rios Gómez', 2147483647, 'rios@gmail.com', 'josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, ', '2018-07-21'),
-(13, 'Miguel Angel Rios Gómez', 2147483647, 'rios@gmail.com', 'josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-21'),
-(14, 'asdfghjkl;lkjhgfdsdfghl;\'', 2147483647, 'rios@gmail.com', 'josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-21'),
-(15, '345678909876543', 123123, 'rios@gmail.com', 'asdfghjhgfdsasdfghjkjhg\r\njosemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-21'),
-(16, 'asdasdasdasd', 2345678, 'rios@gmail.com', 'asdasdasdasda   asdasd asdasd asdasd asdasdadasdasdasdasdasdasdasdasdasdasadas   asdsadasd asdasdasdasda asdasjosemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.d asdasdas asdasdasdasdasdasdasd asdasd', '2018-07-21'),
-(17, 'aasdsadsadasdasd', 23414, 'rios@gmail.com', 'sdfghjgfdsasdfghjklkjhgfdsjosemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-21'),
-(18, 'sdfghjklkjhgf', 123123123, 'rios@gmail.com', 'asdasdasdasdsadsadajosemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-21'),
-(19, 'dfghjkl;\'', 2147483647, 'rios@gmail.com', 'josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-21'),
-(20, 'sdfghjklkjhgfdsdfghjkh', 2147483647, 'rios@gmail.com', 'asdsadsajosemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-21'),
-(21, 'asaxasxas', 2147483647, 'rios@gmail.com', 'josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-21'),
-(22, 'sdfghjklkjhgfdsdfghjkh', 123456, 'rios@gmail.com', 'josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.josemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-21'),
-(23, 'SchoolBoy Q', 117117114, 'sbq@aftermath.com', '47-690-07-88\r\njosemanuel@ledit.mx\r\nled_it@live.com\r\nAlvaro Obregon 26-A Col. Centro CP 61250\r\nMaravatio, Michoacan.', '2018-07-23'),
-(24, 'STONE COLD', 316, 'stone@hotmail.com', 'order by nombre_Usuarioorder by nombre_Usuarioorder by nombre_Usuarioorder by nombre_Usuario', '2018-07-24');
+(1, 'sdasd', 12313, 'rios@gmail.com', 'asdasdasdasdsaddatatable Alvaro Obregon 26-A Col. Centro CP 61250  Alvaro Obregon 26-A Col. Centro CP 61250  Alvaro Obregon 26-A Col. Centro CP 61250 datatable', '2018-07-25'),
+(2, 'Miguel', 12323123, 'rios@gmail.coma', 'asdasdasdasdasdasdasdasd', '2018-07-25'),
+(3, 'asxasx', 123123, 'saxasx', '', '2018-07-27'),
+(4, 'asxasx', 123, 'rios@gmail.com', 'asxasxasxasxasxasx', '2018-07-27'),
+(5, 'Rios', 4344062, 'rios@gamil.com', 'hola', '2018-07-29'),
+(6, 'asxasx', 123123, 'rios@gamil.com', '12123', '2018-07-29'),
+(7, 'asdsd', 123123, 'rios@gamil.com', 'asdasd', '2018-07-29'),
+(8, 'asxasx', 12323, 'rios@gamil.com', 'asxasxasxasx', '2018-07-29'),
+(9, 'asdad', 443231, 'rios@gamil.com', '12321', '2018-07-30'),
+(10, 'asxas', 123213, 'rios@gamil.com', '123123', '2018-07-30'),
+(11, 'asx', 123, 'rios@gamil.com', '123asd', '2018-07-30'),
+(12, 'asx', 123, 'rios@gamil.com', '123asd', '2018-07-30'),
+(13, 'asdsd', 3123, 'rios@gamil.com', '123123', '2018-07-30'),
+(14, 'aaa', 123123213, 'rios@gamil.com', 'qdqwdqwdasdasd', '2018-07-30'),
+(15, 'AX', 123213, 'rios@gamil.com', 'ASX', '2018-07-30'),
+(16, 'AX', 123213, 'rios@gamil.com', 'ASX', '2018-07-30'),
+(17, 'AX', 123213, 'rios@gamil.com', 'ASX', '2018-07-30'),
+(18, 'AX', 123213, 'rios@gamil.com', 'ASX', '2018-07-30'),
+(19, 'AX', 123213, 'rios@gamil.com', 'ASX', '2018-07-30'),
+(20, 'asdas', 1213, 'rios@gamil.com', '123112', '2018-07-30');
 
 -- --------------------------------------------------------
 
@@ -103,8 +117,7 @@ CREATE TABLE `faqs` (
 --
 
 INSERT INTO `faqs` (`id_Faq`, `id_Usuario_Faq`, `pregunta_Faq`, `respuesta_Faq`, `id_Status_Faq`) VALUES
-(3, 4, 'a', 'a', 2),
-(4, 4, 'z', 'z', 2);
+(92, 4, 'que paso', 'nada', 1);
 
 -- --------------------------------------------------------
 
@@ -125,8 +138,7 @@ CREATE TABLE `galeria` (
 --
 
 INSERT INTO `galeria` (`id_Galeria`, `id_Usuario_Galeria`, `titulo_Galeria`, `imagen_Galeria`, `id_Status_Galeria`) VALUES
-(12, 4, 'asdasd', 'e4b84-1.jpg', 1),
-(13, 4, 'asdasd', 'd6d7d-fb_img_1517848804324.jpg', 1);
+(1, 3, 'asc', '5ff78-david-20180724_011512.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -150,8 +162,27 @@ CREATE TABLE `noticias` (
 --
 
 INSERT INTO `noticias` (`id_Noticia`, `id_Usuario_Noticia`, `titulo_Noticia`, `imagen_Noticia`, `descripcion_Corta_Noticia`, `descripcion_Larga_Noticia`, `fecha_Noticia`, `id_Status_Noticia`) VALUES
-(10, 4, 'sdrtyul', 'cec8f-fb_img_1526789551445.jpg', 'sdfghjk', 'asdfghjklkjhgfdsdfghjklkjhgf', '2018-07-23', 1),
-(11, 4, 'ASDASDAS', '9df53-fb_img_1527372249543.jpg', 'ASDSAD', 'ASDASD', '2018-07-23', 1);
+(1, 3, 'asaxs', '38890-udj6k3xewbgq8n1hb96e.jpg', 'asx', 'asxasx', '2018-07-28', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `privilegios`
+--
+
+CREATE TABLE `privilegios` (
+  `id_Privilegio` int(11) NOT NULL,
+  `privilegio` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `privilegios`
+--
+
+INSERT INTO `privilegios` (`id_Privilegio`, `privilegio`) VALUES
+(1, 'Super Administrador'),
+(2, 'Administrador'),
+(3, 'Usuario');
 
 -- --------------------------------------------------------
 
@@ -171,7 +202,7 @@ CREATE TABLE `productos` (
   `color_Luz_Producto` varchar(200) NOT NULL,
   `flujo_Luminoso_Producto` varchar(200) NOT NULL,
   `material_Producto` varchar(200) NOT NULL,
-  `precio_Producto` double NOT NULL,
+  `precio_Producto` double(9,2) NOT NULL,
   `stock_Producto` int(11) NOT NULL,
   `id_Status_Producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -215,7 +246,7 @@ CREATE TABLE `usuarios` (
   `telefono_Usuario` varchar(200) NOT NULL,
   `correo_Usuario` varchar(300) NOT NULL,
   `password` varchar(300) NOT NULL,
-  `privilegios_Usuario` int(11) NOT NULL,
+  `id_Privilegios_Usuario` int(11) NOT NULL,
   `id_Status_Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -223,8 +254,11 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_Usuario`, `imagen_Usuario`, `nombre_Usuario`, `apellido_Paterno_Usuario`, `apellido_Materno_Usuario`, `estado_Usuario`, `ciudad_Usuario`, `calle_Usuario`, `numero_Interior_Usuario`, `numero_Exterior_Usuario`, `telefono_Usuario`, `correo_Usuario`, `password`, `privilegios_Usuario`, `id_Status_Usuario`) VALUES
-(4, '926fa-52-1-447-125-8532-20171224_113125.jpg', 'Miguel Angel', 'Rios', 'Gómez', 'Michoacán', 'Santa Elena', 'Nicolás Bravo', '(Número exterior solamente)', '27', '4471258532', 'rios@gmail.com', '123', 0, 1);
+INSERT INTO `usuarios` (`id_Usuario`, `imagen_Usuario`, `nombre_Usuario`, `apellido_Paterno_Usuario`, `apellido_Materno_Usuario`, `estado_Usuario`, `ciudad_Usuario`, `calle_Usuario`, `numero_Interior_Usuario`, `numero_Exterior_Usuario`, `telefono_Usuario`, `correo_Usuario`, `password`, `id_Privilegios_Usuario`, `id_Status_Usuario`) VALUES
+(1, '', 'SuperAdmin', 'SuperAdmin', 'SuperAdmin', 'SuperAdmin', 'SuperAdmin', 'SuperAdmin', 'SuperAdmin', 'SuperAdmin', 'SuperAdmin', 'superadmin@gmail.com', '123', 1, 1),
+(2, '88f23-david-20180724_011512.jpg', 'Oscar David', 'López', 'Bárcenas', 'Michoacán', 'Maravatío', 'Lázaro Cárdenas', 'S/N', '526', '447562288', 'david@revoltech.rt', '123', 2, 1),
+(3, 'b5d97-descarga.png', 'José Eduardo', 'Soreque', 'Ávila', 'Michoacán', 'Maravatío', 'Benito Júarez', 'S/N', '98', '44756226', 'sore@revoltech.rt', '123', 3, 1),
+(4, '4bae4-52-1-447-125-8532-20171224_113125.jpg', 'Miguel Angel', 'Rios', 'Gómez', 'Michoacán', 'Santa Elena', 'Nicolás Bravo', 'S/N', '27', '447226552', 'rios@revoltech.rt', '123', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -289,6 +323,12 @@ ALTER TABLE `noticias`
   ADD KEY `id_status_Noticia` (`id_Status_Noticia`);
 
 --
+-- Indices de la tabla `privilegios`
+--
+ALTER TABLE `privilegios`
+  ADD PRIMARY KEY (`id_Privilegio`);
+
+--
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -308,7 +348,8 @@ ALTER TABLE `status`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_Usuario`),
-  ADD KEY `id_status_Usuario` (`id_Status_Usuario`);
+  ADD KEY `id_status_Usuario` (`id_Status_Usuario`),
+  ADD KEY `id_Privilegios_Usuario` (`id_Privilegios_Usuario`);
 
 --
 -- Indices de la tabla `ventas`
@@ -324,13 +365,13 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `contactos`
 --
 ALTER TABLE `contactos`
-  MODIFY `id_Contacto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_Contacto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_venta`
@@ -342,25 +383,31 @@ ALTER TABLE `detalle_venta`
 -- AUTO_INCREMENT de la tabla `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id_Faq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_Faq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT de la tabla `galeria`
 --
 ALTER TABLE `galeria`
-  MODIFY `id_Galeria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_Galeria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id_Noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_Noticia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `privilegios`
+--
+ALTER TABLE `privilegios`
+  MODIFY `id_Privilegio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_Producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_Producto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `status`
@@ -435,7 +482,8 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_status_Usuario`) REFERENCES `status` (`id_Status`),
-  ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`id_Status_Usuario`) REFERENCES `status` (`id_Status`);
+  ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`id_Status_Usuario`) REFERENCES `status` (`id_Status`),
+  ADD CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`id_Privilegios_Usuario`) REFERENCES `privilegios` (`id_Privilegio`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

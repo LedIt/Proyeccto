@@ -1,6 +1,6 @@
 
 <!-- ##### Footer Area Start ##### -->
-    <footer class=" wow fadeInUp footer-area section-padding-100-0 bg-img gradient-background-overlay" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s1.jpg);" data-delay="600ms">
+    <footer class=" wow fadeInUp footer-area section-padding-100-0 bg-img gradient-background-overlay" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s1.jpg);" data-delay="200ms">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
@@ -18,7 +18,7 @@
                                <div class="address">
                                 <h6><img src="<?=base_url();?>libraries/img/icons/phone-call.png" alt=""><strong> 447-690-07-88</strong></h6>
                                 <h6><img src="<?=base_url();?>libraries/img/icons/envelope.png" alt=""><strong> josemanuel@ledit.mx <br> led_it@live.com</strong></h6>
-                                <h6><img src="<?=base_url();?>libraries/img/icons/location.png" alt=""><strong> Alvaro Obregon 26-A Col. Centro CP 61250 <br> Maravatio, Michoacan.</strong></h6>
+                                <h6><img src="<?=base_url();?>libraries/img/icons/location.png" alt=""><strong> Álvaro Obregón 26-A Col. Centro CP 61250 <br> Maravatío, Michoacán.</strong></h6>
 
                             </div>
                             </div>
@@ -54,9 +54,6 @@
         </div>
     </footer>
     <!-- ##### Footer Area End ##### -->
-
-<script type="text/javascript" src="<?=base_url();?>libraries/sweetalert2/dist/sweetalert2.min.js"></script>
-<script type="text/javascript" src="<?=base_url();?>libraries/sweetalert2/dist/jquery-1.11.1.min.js"></script>
 <!--===============================================================================================-->
 <script src="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

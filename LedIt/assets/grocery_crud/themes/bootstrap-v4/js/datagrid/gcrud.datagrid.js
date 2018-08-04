@@ -2,6 +2,7 @@
 (function ($) {
     "use strict";
 
+
     /**
      * This is the description for my class.
      *
@@ -159,13 +160,13 @@
             $csrf_field;
 
         if (!success_message_container.is(':empty')) {
-            $.growl(success_message_container.html(), {
-                type: 'success',
-                delay: 10000,
-                animate: {
-                    enter: 'animated bounceInDown',
-                    exit: 'animated bounceOutUp'
-                }
+            swal({
+                        position: 'center',
+                        title: 'Correcto',
+                        text: '¡ Registro actualizado !',
+                        type: 'success'
+                    }).then(function() {
+                        
             });
         }
 
@@ -761,24 +762,24 @@
                 };
 
                 this.sendAjaxPost(data_to_send, urlPath, function (output) {
-                    if (output.success) {
-                        $.growl(output.success_message, {
-                            type: 'success',
-                            delay: 10000,
-                            animate: {
-                                enter: 'animated bounceInDown',
-                                exit: 'animated bounceOutUp'
-                            }
-                        });
-                    } else {
-                        $.growl(output.error_message, {
-                            type: 'danger',
-                            delay: 10000,
-                            animate: {
-                                enter: 'animated bounceInUp',
-                                exit: 'animated bounceOutDown'
-                            }
-                        });
+                    if (output.success) {               
+                    swal({
+                        position: 'center',
+                        title: 'Correcto',
+                        text: '¡ Los registros han sido eliminados de la base de datos !',
+                        type: 'success'
+                    }).then(function() {
+                        window.location.href = '';
+                    });    
+                    } else {                
+                    swal({
+                        position: 'center',
+                        title: 'Lo sentimos',
+                        text: '¡ Los registros no pudieron ser eliminados !',
+                        type: 'warning'
+                    }).then(function() {
+                        window.location.href = '';
+                    });                      
                     }
 
                     my_modal.gc_modal('hide');
@@ -822,24 +823,27 @@
                     url: delete_row_button.data('target'),
                     dataType: 'json',
                     success: function (output) {
+
                         if (output.success) {
-                            $.growl(output.success_message, {
-                                type: 'success',
-                                delay: 10000,
-                                animate: {
-                                    enter: 'animated bounceInUp',
-                                    exit: 'animated bounceOutDown'
-                                }
-                            });
+                            swal({
+                                position: 'center',
+                                title: 'Correcto',
+                                text: '¡ El registro ha sido eliminado de la base de datos !',
+                                type: 'success'
+                            }).then(function() {
+                                window.location.href = '';
+                            });    
                         } else {
-                            $.growl(output.error_message, {
-                                type: 'danger',
-                                delay: 10000,
-                                animate: {
-                                    enter: 'animated bounceInDown',
-                                    exit: 'animated bounceOutUp'
-                                }
-                            });
+                            swal({
+                                position: 'center',
+                                title: 'Lo sentimos',
+                                text: '¡ El registro no pudo ser eliminado !',
+                                type: 'warning'
+                            }).then(function() {
+                                window.location.href = '';
+                            });    
+    
+
                         }
 
                         my_modal.gc_modal('hide');

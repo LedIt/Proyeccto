@@ -32,12 +32,24 @@ class ControlFrontEnd extends CI_Controller {
  */
 	public function index($option = 1)
 	{
-		$data['categorias'] =$this->Categoria_Mdl->ListarCategoriaFront();
-		$this->load->view('frontend/template/header',$data);
+			$this->load->view('frontend/template/header');
 		Switch ($option){
 		    case 1:
-			    $data['productos'] =$this->Producto_Mdl->ListarProductoFront();
-			    $this->load->view('frontend/inicio_vw',$data);
+		      	$this->load->library('pagination');
+		      	$pages = 6;
+		      	$config['base_url'] = base_url().'ControlFrontEnd/carrito';  /*vista que se quiere mostrar creo*/
+		      	$config['total_rows'] = $this->Producto_Mdl->totalFilas();
+		      	$config['per_page'] = $pages;
+		      	$config['num_links'] = 20;
+		      	$config['first_link'] = "asc";  /* primero o  |>*/
+		      	$config['last_link'] = "asc>";
+		      	$config['next_link'] = ">asc";
+		      	$config['prev_link'] = "<ascsac";
+		      	$config['full_tag_open'] = "<div class='pagination'>";
+		      	$config['full_tag_close'] = "</div>";
+		      	$this->pagination->initialize($config);
+			  	$data['productos'] = $this->Producto_Mdl->getProductos_paginados($config['per_page'],$this->uri->segment(6));
+      		  	$this->load->view('frontend/inicio_vw',$data);
 			    break;
 
 		    case 2:
@@ -61,19 +73,78 @@ class ControlFrontEnd extends CI_Controller {
 			    break;
 
 		    case 6:
+		    
 			    $this->load->view('frontend/contacto_vw');
-			    
+
 			    break;
 
-		    case 8:
-			    $this->load->view('frontend/registro_vw');
+			case 10:
+				$this->load->library('pagination');
+		      	$pages = 6;
+		      	$config['base_url'] = base_url().'ControlFrontEnd/carrito';  /*vista que se quiere mostrar creo*/
+		      	$config['total_rows'] = $this->Producto_Mdl->totalFilas();
+		      	$config['per_page'] = $pages;
+		      	$config['num_links'] = 20;
+		      	$config['first_link'] = "";  /* primero o  |>*/
+		      	$config['last_link'] = "";
+		      	$config['next_link'] = "";
+		      	$config['prev_link'] = "";
+		      	$config['full_tag_open'] = "<div class='pagination'>";
+		      	$config['full_tag_close'] = "</div>";
+		      	$this->pagination->initialize($config);
+			  	$data['productos'] = $this->Producto_Mdl->getProductos_paginados($config['per_page'],$this->uri->segment(9));
+			    $this->load->view('frontend/productosTd_vw',$data);
 			    break;
 
-		    case 9:
-			    $this->load->view('frontend/carrito_vw');
+		   case 11:
+			    $this->load->library('pagination');
+		      	$pages = 6;
+		      	$config['base_url'] = base_url().'ControlFrontEnd/carrito';  /*vista que se quiere mostrar creo*/
+		      	$config['total_rows'] = $this->Producto_Mdl->totalFilas();
+		      	$config['per_page'] = $pages;
+		      	$config['num_links'] = 20;
+		      	$config['first_link'] = "asdasd";  /* primero o  |>*/
+		      	$config['last_link'] = "asdasd";
+		      	$config['next_link'] = "asd>";
+		      	$config['prev_link'] = "<asd";
+		      	$config['full_tag_open'] = "<div class='pagination'>";
+		      	$config['full_tag_close'] = "</div>";
+		      	$this->pagination->initialize($config);
+			  	$data['productos'] = $this->Producto_Mdl->getProductos_paginados($config['per_page'],$this->uri->segment(9));
+			    $this->load->view('frontend/productos_vw',$data);
 			    break;
+
+			case 12:
+			    $this->load->library('pagination');
+		      	$pages = 6;
+		      	$config['base_url'] = base_url().'ControlFrontEnd/carrito';  /*vista que se quiere mostrar creo*/
+		      	$config['total_rows'] = $this->Producto_Mdl->totalFilas();
+		      	$config['per_page'] = $pages;
+		      	$config['num_links'] = 20;
+		      	$config['first_link'] = "asdasd";  /* primero o  |>*/
+		      	$config['last_link'] = "asdasd";
+		      	$config['next_link'] = "asd>";
+		      	$config['prev_link'] = "<asd";
+		      	$config['full_tag_open'] = "<div class='pagination'>";
+		      	$config['full_tag_close'] = "</div>";
+		      	$this->pagination->initialize($config);
+			  	$data['productos'] = $this->Producto_Mdl->getProductos_paginados($config['per_page'],$this->uri->segment(9));
+		    	$this->load->view('frontend/productos2_vw',$data);
+			    break;
+
+
 		   }
-		    $this->load->view('frontend/template/footer');
+		        $this->load->view('frontend/template/footer');
+	}
+
+
+
+
+				 
+
+
+	public function carrito(){
+	   $this->load->view('frontend/carrito_vw');
 	}
 }
 ?>

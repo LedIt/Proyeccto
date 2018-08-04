@@ -8,9 +8,10 @@
 @import url(css/magnific-popup.css);
 @import url(css/font-awesome.min.css);
 @import url(css/themify-icons.css);
-@import url(css/nice-select.css);
+
 @import url(css/jquery-ui.min.css);
 /* :: 3.0 Base CSS */
+
 
 .badge {
   display: inline-block;

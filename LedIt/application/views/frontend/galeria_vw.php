@@ -13,7 +13,7 @@
 */
 ?>
 <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s4.jpg);">
+    <section class="breadcumb-area bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s3.jpg); box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.9);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -30,19 +30,29 @@
             </div>
         </div>
     </section>
+        <style type="text/css">
+  #fondo{
+
+  background: #0a1123;
+  background: -webkit-linear-gradient(left, #0a1123, #6c87cc);
+  background: -o-linear-gradient(left, #0a1123, #6c87cc);
+  background: -moz-linear-gradient(left, #0a1123, #6c87cc);
+  background: linear-gradient(left, #0a1123, #6c87cc);
+}
+  }
+</style>
     <!-- ##### Breadcumb Area End ##### -->
     <!-- ##### Featured Properties Area Start ##### -->
-    <section class="featured-properties-area section-padding-100-50 col-12">
+    <section id="fondo" class="featured-properties-area section-padding-100-50 col-12">
         <div class="container">
 
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-heading wow fadeInUp">
-                            <h2>Disfruta de nuestra galería</h2>
-                            <p>Con las mejores lámparas de led solares en el mercado.</p>
-                        </div>
+                 <div  style="background-color: #7d7d7d; border-radius: 20px;" class="section-heading wow fadeInUp">
+                            <h1 style="color: #000;">Disfruta de nuestra galería</h1>
+                            
+                               <div style="background-color:  #0a1123;" class="section-heading wow fadeInUp">
+                                <p style="color: #fff;">Con las mejores lámparas de led solares en el mercado</p>
+                              </div>
                     </div>
-                </div>
                  <div class="contentArea">
                         <div class="divPanel notop page-content">
                             <div class="row-fluid">
@@ -53,8 +63,8 @@
                                          */
                                         foreach($galeria as $gal):
                                     ?>
-                                        <ul id="tiles">
-                                            <li class="wow fadeInUp">
+                                        <ul  id="tiles">
+                                            <li style=" box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.9);" class="wow fadeInUp">
                                             <?php $ruta1=base_url(). "libraries/libraries-backend/images/thumbnails/galeria/"?>
                                             <?php $ruta2=base_url(). "libraries/libraries-backend/images/thumbnails/"?>
                                                 

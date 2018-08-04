@@ -49,12 +49,12 @@
             ?>     
                 <!-- Single Featured Property -->
                 <div class="col-12 col-md-6 col-xl-4">
-                	<a href="">
+                	<a href="<?=base_url();?>">
 	                    <div class="single-featured-property mb-50">
 	                        <!-- Property Thumbnail -->
 	                        <div class="property-thumb">
 	                            <?php $ruta1=base_url(). "libraries/libraries-backend/images/thumbnails/categorias/"?>
-                                <?php $ruta2=base_url(). "libraries/libraries-backend/images/thumbnails/"?>
+                              <?php $ruta2=base_url(). "libraries/libraries-backend/images/thumbnails/"?>
 
                                  <?php 
                                  /**

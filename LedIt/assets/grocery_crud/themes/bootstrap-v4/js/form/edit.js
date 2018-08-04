@@ -51,6 +51,7 @@ jQuery(function ($) {
 						success: function(result) {
 							data = $.parseJSON(result);
 							if (data.success) {
+									
 
 								if(save_and_close)
 								{
@@ -64,9 +65,25 @@ jQuery(function ($) {
 									return true;
 								}
 
-								form_success_message(data.success_message);
+								swal({
+                                            position: 'center',
+                                            title: 'Correcto',
+                                            text: '¡ Registro actualizado !',
+                                            type: 'success'
+                                        }).then(function() {
+                                        
+                                    });
+
 							} else {
-								form_error_message(message_update_error);
+
+								swal({
+                                            position: 'center',
+                                            title: 'Lo sentimos',
+                                            text: '¡ No fue posible actualizar el registro !',
+                                            type: 'warning'
+                                        }).then(function() {
+                                        
+                                    });
 							}
 						},
 						error: function(){

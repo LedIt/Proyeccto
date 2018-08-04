@@ -9,7 +9,7 @@
     if ($this->config->environment == 'production') {
         $this->set_js_lib($this->default_javascript_path.'/'.grocery_CRUD::JQUERY);
         $this->set_js_lib($this->default_theme_path.'/bootstrap-v4/build/js/global-libs.min.js');
-        $this->set_js_config($this->default_theme_path.'/bootstrap-v4/js/form/edit.min.js');
+        $this->set_js_config($this->default_theme_path.'/bootstrap-v4/js/form/edit.js');
     } else {
         $this->set_js_lib($this->default_javascript_path.'/'.grocery_CRUD::JQUERY);
         $this->set_js_lib($this->default_theme_path.'/bootstrap-v4/js/jquery-plugins/jquery.form.min.js');
@@ -54,8 +54,7 @@ include(__DIR__ . '/common_javascript_vars.php');
                     <?php } ?>
                     <?php if ($is_ajax) { ?><input type="hidden" name="is_ajax" value="true" /><?php }?>
                     <div class="form-group gcrud-form-group">
-                        <div id='report-error' class='report-div error bg-danger' style="display:none"></div>
-                        <div id='report-success' class='report-div success bg-success' style="display:none"></div>
+                        
                     </div>
                     <hr>
                     <div class="form-group gcrud-form-group">

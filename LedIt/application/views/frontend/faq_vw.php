@@ -13,7 +13,7 @@
 */
 ?>
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s4.jpg);">
+    <section class="breadcumb-area bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s4.jpg);  box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.9);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -54,7 +54,6 @@
                         <div class="single-testimonial-slide text-center">
                             <h5><?=$faq->pregunta_Faq;?></h5>
                             <p><?=$faq->respuesta_Faq;?></p>
-                            <p><?=$faq->id_Status_Faq;?></p>
                             <div class="testimonial-author-info">
                                 <img src="<?=base_url();?>libraries/img/bg-img/s2.jpg" alt="">
                                 <p>Led It<span></span></p>

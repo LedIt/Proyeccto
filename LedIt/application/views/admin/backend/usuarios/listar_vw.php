@@ -23,10 +23,13 @@ foreach($css_files as $file): ?>
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div style="background-color: ;  box-shadow: 0px 0px 10px -5px rgba(10,17,35,0.9); border-bottom-right-radius: 20px; border-bottom-left-radius: 20px" class="x_panel">
                   <div class="x_title">  
-                   <h3>Usuarios <small>Listado de registros</small></h3>               
+                   <h3>Administradores <small>Listado de registros</small></h3>               
                     <div class="clearfix"></div>
                   </div>
                   <?php echo $output; ?>
+
+					<a class="" href="<?=base_url();?>/Pdfs1/datos_bd_Us">Generar Reporte de Usuarios</a>
+
                 </div>
               </div>
             </div>
@@ -64,6 +67,8 @@ foreach($css_files as $file): ?>
 
     <!-- Custom Theme Scripts -->
     <script src="<?=base_url();?>libraries/libraries-backend/build/js/custom.min.js"></script>
+
+
 </body>
 </html>
 

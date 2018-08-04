@@ -14,9 +14,9 @@
 ?>
   <!-- ##### Hero Area Start ##### -->
     <section class="hero-area">
-        <div class="hero-slides">
+        <div  style=" box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.9);" class="hero-slides">
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s7.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s7.jpg); ">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s3.jpg);">
+            <div class="single-hero-slide bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s11.jpg);">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-12">
@@ -57,18 +57,76 @@
             </div>
         </div>
     </section>
+    <style type="text/css">
+  #fondo{
+
+  background: #0a1123;
+  background: -webkit-linear-gradient(left, #0a1123, #6c87cc);
+  background: -o-linear-gradient(left, #0a1123, #6c87cc);
+  background: -moz-linear-gradient(left, #0a1123, #6c87cc);
+  background: linear-gradient(left, #0a1123, #6c87cc);
+}
+  }
+</style>
     <!-- ##### Hero Area End ##### -->
     <!-- ##### Featured Properties Area Start ##### -->
-    <section class="featured-properties-area section-padding-100-50">
+    <section id="fondo" class="featured-properties-area section-padding-100-50">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="section-heading wow fadeInUp">
-                        <h2>Conoce nuestros nuevos productos</h2>
-                        <p>Siempre a la vanguardia con las mejores tecnologías</p>
+
+                    <div  style="background-color: #7d7d7d; border-radius: 20px;" class="section-heading wow fadeInUp">
+                            <h1 style="color: #000;">Conoce nuestros nuevos productos</h1>
+                            
+                               <div style="background-color:  #0a1123;" class="section-heading wow fadeInUp">
+                                <p style="color: #fff;">Siempre a la vanguardia con las mejores tecnologías</p>
+                              </div>
                     </div>
                 </div>
             </div>
+
+            <?php
+                //mostramos el mensaje de las sesiones flashdata dependiendo
+                //de lo que hayamos hecho.
+                $agregado = $this->session->flashdata('agregado');
+                $destruido = $this->session->flashdata('destruido');
+                $productoEliminado = $this->session->flashdata('productoEliminado');
+                if ($agregado) {
+                    ?>
+                    <script>
+                                    swal({
+                                        position: 'center',
+                                        title: 'Correcto',
+                                        text: '¡ Producto agregado al carrito !',
+                                        type: 'success'
+                                    }); 
+                        </script>
+                    <?php
+                }elseif($destruido){
+                    ?>
+                   <script>
+                                    swal({
+                                        position: 'center',
+                                        title: 'Correcto',
+                                        text: '¡ El carrito esta vacío !',
+                                        type: 'success'
+                                    }); 
+                        </script>
+                    <?php
+                }elseif($productoEliminado){
+                    ?>
+                     <script>
+                                    swal({
+                                        position: 'center',
+                                        title: 'Correcto',
+                                        text: '¡ Producto eleiminado del carrito !',
+                                        type: 'success'
+                                    }); 
+                        </script>
+                    <?php
+                }
+                ?>
+
             <div class="row">
             <?php
                 /**
@@ -77,8 +135,11 @@
                 foreach($productos as $prod):
             ?>
                 <!-- Single Featured Property -->
-                <div class="col-12 col-md-6 col-xl-4">
-                    <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
+                <div  class="col-12 col-md-6 col-xl-4">
+                    <div style="background-color: #fff;" class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
+
+            <?=form_open(base_url().'Productos/agregarProducto')?>
+
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
                     <?php $ruta1=base_url(). "libraries/libraries-backend/images/thumbnails/productos/"?>
@@ -94,38 +155,50 @@
                      <?php }else{ ?>
                                <img src="<?=$ruta2.'ledit.png';?>">
                      <?php } ?>
-                            <div class="tag">
-                                <a href=""><span class="fa fa-shopping-cart" title="Añadir al carrito"></span></a>
-                            </div>
+                            
                             <div class="list-price">
                                 <p>$<?=$prod->precio_Producto;?></p>
                             </div>
                         </div>
                         <!-- Property Content -->
-                        <div class="property-content">
-                            <h5 align="center"><?=$prod->modelo_Producto;?></h5>
-                            <p align="center" class="location"><?=$prod->nombre_Producto;?></p>
-                             <hr>
-                            <p style="text-align: justify;">Potencia: <?=$prod->potencia_Producto;?><br>
-                               Voltaje: <?=$prod->voltaje_Producto;?><br>
-                               Color de luz: <?=$prod->color_Luz_Producto;?><br>
-                               Material: <?=$prod->material_Producto;?><br>
-                               Flijo Luminoso: <?=$prod->flujo_Luminoso_Producto;?> 
+                        <div style="background-color:  #0a1123; border-style: none;"  class="property-content">
+                            <h5 style="color: #fff;"  align="center"><?=$prod->modelo_Producto;?></h5>
+                            <p style="color: #7d7d7d;"  align="center" class="location"><?=$prod->nombre_Producto;?></p>
+                             <hr style="border-style: solid; border-color: #7d7d7d;">
+                            <p style="text-align: justify; font-weight: normal;">Potencia:&nbsp;&nbsp;<i style="color: #fff; font-style: normal;"><?=$prod->potencia_Producto;?></i><br>
+                               Voltaje:&nbsp;&nbsp;<i style="color: #fff; font-style: normal;"><?=$prod->voltaje_Producto;?></i><br>
+                               Color de luz:&nbsp;&nbsp;<i style="color: #fff; font-style: normal;"><?=$prod->color_Luz_Producto;?></i><br>
+                               Material:&nbsp;&nbsp;<i style="color: #fff; font-style: normal;"><?=$prod->material_Producto;?></i><br>
+                               Flijo Luminoso:&nbsp;&nbsp;<i style="color: #fff; font-style: normal;"><?=$prod->flujo_Luminoso_Producto;?></i> 
                             </p>
+                            <hr style="border-style: solid; border-color: #7d7d7d;">
                             <div class="property-meta-data d-flex align-items-end justify-content-between">
-                                <div class="new-tag">
-                                    <img src="<?=base_url();?>libraries/img/icons/new.png" alt="">
+                                <div style="margin-left: 55px;">
+                                       
+                                     <?= form_submit('action','Agregar al carrito', "class='btn btn-success'"); ?>
                                 </div>
                                 
                             </div>
                         </div>
+
+                        <?= form_hidden('uri', $this->uri->segment(3)); ?>
+                        <?= form_hidden('id', $prod->id_Producto); ?>
+                        <?= form_close() ?>
                     </div>
                 </div>
             <?php
                 endforeach;
             ?>
+              <div style="color: #000;" >
+              <div>
+                <?= $this->pagination->create_links() ?>
+              </div>
+            </div>
+              </div>
+            </div>
         </div>
     </section>
+
     <!-- ##### Featured Properties Area End ##### -->
     <!-- ##### Call To Action Area Start ##### -->
     <section class="call-to-action-area bg-fixed bg-overlay-black" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s8.jpg)">
@@ -133,7 +206,7 @@
             <div class="row align-items-center h-100">
                 <div class="col-12">
                     <div class="cta-content text-center">
-                        <h2 class="wow fadeInUp" data-wow-delay="200ms">¿Quienes somos?</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay="200ms">¿Quiénes somos?</h2>
 
                         <p style="color: #ffffff; font-size: 24px; text-align: justify;" class="wow fadeInUp" data-wow-delay="300ms">
                             <i class="fa fa-arrow-right"></i><strong style="color: #696969;"> Empresa formalmente</strong> establecida especializada en iluminación con tecnología LED.

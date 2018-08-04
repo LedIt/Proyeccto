@@ -37,7 +37,12 @@
             <div class="row">
                 <div class="col-12 col-lg-12">
                 <div class="contact-heading">
-                    <h6>Noticias</h6>
+                    <div class="col-12">
+                    <div class="section-heading wow fadeInUp" data-wow-delay="250ms">
+                        <h2>Noticias</h2>
+                        <p>Mantente bien informado con noticias ecológicas</p>
+                    </div>
+                </div>
                 </div>
 
                 <?php

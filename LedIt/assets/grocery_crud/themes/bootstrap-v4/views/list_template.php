@@ -145,7 +145,7 @@
                     <?php echo form_open("", 'method="post" autocomplete="off" id="gcrud-search-form"'); ?>
 
                         <div class="scroll-if-required">
-                            <table class="table  grocery-crud-table table-hover">
+                            <table class="table table-responsive grocery-crud-table table-hover">
                             <thead>
                              <tr style="border-top: 1px solid ">
                                 <th style="text-align: center; color: #0a1123;" colspan="2" <?php if ($buttons_counter === 0) {?>class="hidden"<?php }?>>

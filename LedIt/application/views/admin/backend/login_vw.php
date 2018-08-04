@@ -20,20 +20,25 @@
   <!-- Custom styles -->
   <link href="<?=base_url();?>libraries/libraries-backend/login-styles/css/style.css" rel="stylesheet">
   <link href="<?=base_url();?>libraries/libraries-backend/login-styles/css/style-responsive.css" rel="stylesheet" />
-
-<!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/vendor/animate/animate.css">
-<!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/css/util.css">
   <link rel="stylesheet" type="text/css" href="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/css/main2.css">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="<?=base_url();?>libraries/ketchup/css/jquery.ketchup.css" />
+  <script type="text/javascript" src="<?=base_url();?>libraries/ketchup/js/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="<?=base_url();?>libraries/ketchup/js/jquery.ketchup.all.min.js"></script>
+  <script src="<?=base_url();?>libraries/ketchup/js/jquery.js" type="text/javascript"></script>
+  <script src="<?=base_url();?>libraries/ketchup/js/jquery.ketchup.js" type="text/javascript"></script>
+  <script src="<?=base_url();?>libraries/ketchup/js/jquery.ketchup.validations.js" type="text/javascript"></script>
+  <script src="<?=base_url();?>libraries/ketchup/js/jquery.ketchup.helpers.js" type="text/javascript"></script>
+  <script src="<?=base_url();?>libraries/ketchup/js/scaffold.js" type="text/javascript"></script>
 
 </head>
 
 <body class="login-img3-body">
   <div  class="container">
-    <form style="border-radius: 11px;" class="login-form validate-form" action="<?=base_url().'Usuario/login';?>"  method="POST">
+    <form id="default-behavior" style="border-radius: 11px;" class="login-form" action="<?=base_url().'Usuario/login';?>"  method="POST">
       <div class="login-wrap">
 
   <?php
@@ -54,21 +59,25 @@
   ?>
         <p class="login-img"><i class="icon_lock_alt"></i></p>
         <br>
-          <div  class="wrap-input100 validate-input" data-validate = "¡Correo invalido!">
-            <input class="input100" type="text" name="correo_Usuario" autofocus>
+          <div  class="wrap-input100" >
+            <input class="input100" type="text" name="correo_Usuario" data-validate="validate(required, email)" autofocus>
             <span  class="focus-input100" data-placeholder="Correo Electrónico"></span>
           </div>
 
-          <div class="wrap-input100 validate-input" data-validate="¡Contraseña invalida!">
+          <div class="wrap-input100" >
             <span title="Mostrar contraseña" class="btn-show-pass">
               <i style="font-size: 18px;" class="zmdi zmdi-eye"></i>
             </span>
-            <input class="input100"  type="password" name="password">
+            <input class="input100"  type="password" name="password" data-validate="validate(required, password)">
             <span class="focus-input100" data-placeholder="Contraseña"></span>
           </div>
 
         <button  style="font-weight: normal;" class="btn btn-primary btn-lg btn-block" type="submit">Iniciar sesión</button>
         <a type="button" class="btn btn-info btn-lg btn-block" href="<?=base_url();?>ControlFrontEnd/index/1">Cancelar</a>
+
+        <script type="text/javascript">
+          $('#default-behavior').ketchup();
+        </script>
     </form>
 
 

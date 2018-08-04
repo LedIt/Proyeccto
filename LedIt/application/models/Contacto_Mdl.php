@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Clase "Contacto_Mdl" procesa y realiza las funciones de agregado,listado,modificación y eliminación interactuando deirectamente con los datos.
@@ -31,11 +32,27 @@ class Contacto_Mdl extends CI_Model{
             'mensaje_Contacto' => $mensaje_Contacto,
             'fecha_Contacto' => $fecha_Contacto
         );
-        $this->db->insert('contactos', $data);
-    }
+       $valida=$this->db->insert('contactos', $data);
+        if($valida){
+
+          $this->session->set_flashdata('exitoso', 'exitosos');
+          redirect('ControlFrontEnd/index/6');
+        }
+        else{
+          $this->session->set_flashdata('fallo', 'fallos');
+          redirect('ControlFrontEnd/index/6');
+        }
+}
+  
+ 
 /**
  * La función procesa los datos y ejecuta la consulta de listado de los registros de cantactos en la base de datos (BackEnd).
  */
+
+    public function redireccionar(){
+      redirect('ControlFrontEnd/index/6');
+    }
+
     public function listarContacto(){
         $this->db->order_by('id_Contacto','DESC');
           $cont = $this->db->get('contactos');

@@ -4,13 +4,14 @@ $id=$this->session->userdata('id');
 $perfil=$this->session->userdata('perfil');
 $usuario=$this->session->userdata('usuario');
 
-if(!$id){
-  redirect('Admin/index/12');
-  }
+if($usuario==4){
+ redirect('Admin/index/12');
+}elseif ($usuario==1 || $usuario==2 || $usuario==3) {
+  
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -38,6 +39,10 @@ if(!$id){
     <!-- Custom Theme Style -->
     <link href="<?=base_url();?>libraries/libraries-backend/build/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>libraries/libraries-backend/login-usuario-styles/css/main2.css">
+    
+    <script type="text/javascript" src="<?=base_url();?>libraries/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>libraries/sweetalert2/dist/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?=base_url();?>libraries/sweetalert2/dist/sweetalert2.min.css">
 
   </head>
 
@@ -72,8 +77,6 @@ if(!$id){
                 <span>Bienvenido,</span>
                 <h2><?=$this->session->userdata('nombre');?></h2>
               </div>
-
-                
                 <!-- /menu footer buttons -->
             </div>
             <br>
@@ -87,8 +90,9 @@ if(!$id){
                              <?php 
                           if ($usuario==1 || $usuario==2) {
                         ?>    
-                        <li><a class="" href="<?=base_url();?>Admin/index/2">Ventas</a></li>
-                        <li><a class="" href="<?=base_url();?>Admin/index/9">Contactos&nbsp;&nbsp;<span class="badge bg-green">2</span></a></li>
+                        <li><a class="" href="<?=base_url();?>Admin/index/14">Ventas</a></li>
+                        <li><a class="" href="<?=base_url();?>Admin/index/9">Contactos&nbsp;&nbsp;</a></li>
+                        
                         <?php    
                           }else{ 
                         ?>
@@ -101,13 +105,14 @@ if(!$id){
                         <?php 
                           if ($usuario==1 || $usuario==2) {
                         ?>    
-                          <li><a class="" href="<?=base_url();?>Admin/index/6">Usuarios</a></li>
+                          <li><a class="" href="<?=base_url();?>Admin/index/6">Administradores</a></li>
                         <?php    
                           }else{ 
                         ?>
                         <?php    
                           }
                         ?> 
+                      <li><a class="" href="<?=base_url();?>Admin/index/13">Usuarios</a></li>
                       <li><a class="" href="<?=base_url();?>Admin/index/3">Galería</a></li>
                       <li><a class="" href="<?=base_url();?>Admin/index/4">FAQ'S</a></li>
                       <li><a class="" href="<?=base_url();?>Admin/index/5">Noticias</a></li>
@@ -181,3 +186,11 @@ if(!$id){
           </div>
         </div>
         <!-- /top navigation -->
+<?php
+}else{
+  redirect('Admin/index/12');
+}
+
+
+
+

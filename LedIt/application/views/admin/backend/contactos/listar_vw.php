@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+<?php 
+foreach($css_files as $file): ?>
+  <link type="text/css" rel="stylesheet" href="<?=$file; ?>" />
+<?php endforeach; ?>
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -22,42 +24,45 @@
                     <h3>Mensajes <small>Listado de mensajes de contacto</small></h3>
                     <div class="clearfix"></div>
                   </div>
-                      <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap">
-                      <thead>
-                        <tr>
-                            <th>Fecha de recibido</th>
-                            <th>Nombre</th>
-                            <th>Teléfono</th>
-                            <th>Email</th>
-                            <th>Mensaje</th>
-                            <th>Acciones</th>
-                        </tr>
-                      </thead>
-
-                    <tbody>
-                    <?php
-                    foreach($contactos as $contacto):
-                    ?>
-                            <tr>
-                                <td><?=$contacto->fecha_Contacto;?></td>
-                                <td><?=$contacto->nombre_Contacto;?></td>
-                                <td><?=$contacto->telefono_Contacto;?></td>
-                                <td><?=$contacto->email_Contacto;?></td>
-                                <td><?=$contacto->mensaje_Contacto;?></td>
-                                <td align="center"><a title="Eliminar" href="<?=base_url().'Contactos/eliminarContacto/'.$contacto->id_Contacto;?>"><span style="color: red; font-size: 20px" class="fa fa-trash"></span></a></td>
-                            </tr>
-                    <?php
-                    endforeach;
-                    ?>
-                        
-                      </tbody>
-                    </table>
+                  <?php echo $output; ?>
                 </div>
               </div>
             </div>
           </div>
         <!-- /page content -->
     </div>
+
+    <?php foreach($js_files as $file): ?>
+        <script src="<?=$file; ?>"></script>
+    <?php endforeach;?>
+    <!-- javascripts -->
+    <!-- Bootstrap -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="<?=base_url();?>libraries/libraries-backend/vendors/pdfmake/build/vfs_fonts.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="<?=base_url();?>libraries/libraries-backend/build/js/custom.min.js"></script>
 </body>
 </html>
 

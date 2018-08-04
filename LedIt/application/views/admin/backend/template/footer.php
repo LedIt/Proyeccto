@@ -9,8 +9,7 @@
       </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="<?=base_url();?>libraries/libraries-backend/vendors/jquery/dist/jquery.min.js"></script>
+
     <!-- Bootstrap -->
     <script src="<?=base_url();?>libraries/libraries-backend/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->

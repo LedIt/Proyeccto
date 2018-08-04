@@ -23,6 +23,8 @@ class Contactos extends CI_Controller {
 /**
  * La función agrega un nuevo registro de contactos a la base de datos, es el que recibe los datos desde el formulario de la parte del FrontEnd.
  */
+
+
     public function nuevoContacto(){
         $id_Contacto = $this->input->POST('id_Contacto');
         $nombre_Contacto = $this->input->POST('nombre_Contacto');
@@ -31,8 +33,9 @@ class Contactos extends CI_Controller {
         $mensaje_Contacto = $this->input->POST('mensaje_Contacto');
         $fecha_Contacto = $this->input->POST('fecha_Contacto');
         $this->Contacto_Mdl->nuevoContacto($id_Contacto, $nombre_Contacto, $telefono_Contacto, $email_Contacto, $mensaje_Contacto, $fecha_Contacto);
-       redirect('ControlFrontEnd/index/6');
+       
     }
+
 /**
  * Esta función lista todos los registros de contactos existentes en la base de datos en el lado del BackEnd.
  */ 

@@ -45,6 +45,16 @@ margin-left: 69%;
 
 }
 
+.header-top .header-top-right a:focus {
+   --webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    text-decoration: none;
+    outline: none;
+  background-color: #696969;
+  border-radius: 30px; 
+
+}
+
 .header-top .header-top-right .icons
 {display:none}
 

@@ -63,13 +63,17 @@ jQuery(function ($) {
                             $("#FormLoading").show();
                         },
                         success: function(result){
-                            $("#FormLoading").fadeOut("slow");
-                            data = $.parseJSON( result );
                             if(data.success)
                             {
-                                var data_unique_hash = my_crud_form.closest(".flexigrid").attr("data-unique-hash");
-
-                                $('.flexigrid[data-unique-hash='+data_unique_hash+']').find('.ajax_refresh_and_loading').trigger('click');
+                                swal({
+                                    position: 'center',
+                                    title: 'Correcto',
+                                    text: '¡ Registro agregado !',
+                                    type: 'success'
+                                }).then(function() {
+                                    window.location.href = '';
+                                
+                                });       
 
                                 if(save_and_close)
                                 {
@@ -83,6 +87,8 @@ jQuery(function ($) {
                                     return true;
                                 }
 
+
+
                                 $('.field_error').each(function(){
                                     $(this).removeClass('field_error');
                                 });
@@ -91,7 +97,14 @@ jQuery(function ($) {
                             }
                             else
                             {
-                                alert( message_insert_error );
+                                    swal({
+                                            position: 'center',
+                                            title: 'Lo sentimos',
+                                            text: '¡ No fue posible agregar el registro !',
+                                            type: 'warning'
+                                        }).then(function() {
+                                        
+                                    });
                             }
                         },
                         error: function(){
@@ -108,6 +121,9 @@ jQuery(function ($) {
                         $('input[name='+index+']').closest('.form-group').addClass('has-error');
                     });
 
+                    $('#report-error').slideDown('normal');
+                    $('#report-success').slideUp('fast').html('');
+
                 }
             },
             error: function(){
@@ -115,8 +131,7 @@ jQuery(function ($) {
                     $csrf_field.val(getCookie(csrf_field.csrf_cookie_name));
                 }
 
-                error_message (message_insert_error);
-                $("#FormLoading").hide();
+               alert( message_update_error );
             }
         });
         return false;

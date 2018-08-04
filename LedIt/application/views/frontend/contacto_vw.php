@@ -1,8 +1,37 @@
-
-
 <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s4.jpg);">
+    <section class="breadcumb-area bg-img" style="background-image: url(<?=base_url();?>libraries/img/bg-img/s16.jpg);">
         <div class="container h-100">
+
+                           <?php
+                     $exitoso= $this->session->flashdata('exitoso');
+                     $fallo= $this->session->flashdata('fallo');
+
+                if($exitoso){
+                     ?>
+                        <script>
+                                    swal({
+                                        position: 'center',
+                                        title: 'Correcto',
+                                        text: '¡ Tu mensaje ha sido enviado !',
+                                        type: 'success'
+                                    }); 
+                        </script>
+
+                    <?php
+                          }
+                          if($fallo){
+                        ?>
+                        <script>
+                                    swal({
+                                        position: 'center',
+                                        title: 'Lo sentimos',
+                                        text: '¡ Tu mensaje no pudo ser enviado !',
+                                        type: 'warning'
+                                    }); 
+                        </script>
+                            <?php
+                  }
+                  ?>
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                       <div class="breadcumb-content wow fadeInUp">
@@ -24,7 +53,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="contact-heading wow fadeInUp" data-delay="60ms">
-                        <h1 style="color: #0a1123;" align="center">¿Alguna Duda? o ¿Más información? Mandanos un mensaje y nos contactaremos...</h1>
+                        <h1 style="color: #0a1123;" align="center">¿Alguna Duda? o ¿Más información? Mándanos un mensaje y nos contactaremos...</h1>
                         <hr> 
                         <h6><span class="fa fa-info-circle"></span> Contáctanos</h6>   
                     </div>
@@ -46,48 +75,132 @@
                         <div class="address mt-30 wow fadeInUp" data-delay="200ms">
                             <h6><img src="<?=base_url();?>libraries/img/icons/phone-call.png" alt=""> 447-690-07-88</h6>
                             <h6><img src="<?=base_url();?>libraries/img/icons/envelope.png" alt=""> josemanuel@ledit.mx <br> led_it@live.com</h6>
-                            <h6><img src="<?=base_url();?>libraries/img/icons/location.png" alt=""> Alvaro Obregon 26-A Col. Centro CP 61250 <br> Maravatio, Michoacan.</h6>
+                            <h6><img src="<?=base_url();?>libraries/img/icons/location.png" alt=""> Álvaro Obregón 26-A Col. Centro CP 61250 <br> Maravatío, Michoacán.</h6>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Form Area -->
-                <div class="col-12 col-lg-8">
+               
+                        <?php
+                                $id=$this->session->userdata('id');
+                                $nombre=$this->session->userdata('nombre');
+                                $apellidoP=$this->session->userdata('apellidoP');
+                                $apellidoM=$this->session->userdata('apellidoM');
+                                $correo=$this->session->userdata('correo');
+                                $telefono=$this->session->userdata('telefono');
+                                $telefono=$this->session->userdata('telefono');
+
+                        if ($id) {
+                        ?>
+        <div class="col-12 col-lg-8">
                     <div class="contact-form wow fadeInUp" data-delay="400ms">
-                        <form class="validate-form" action="<?=base_url().'Contactos/nuevoContacto';?>" method="POST">
-                            <div class="form-group">
+                        <form id="default-behavior" action="<?=base_url().'Contactos/nuevoContacto';?>" method="POST">
+                             <div align="center" class="form-group">
 
-                            <div  class="wrap-input100 validate-input" data-validate = "¡Nombre invalido!">
-                                <input class="input100" type="text" name="nombre_Contacto" autofocus>
-                                <span  class="focus-input100" data-placeholder="Nombre completo"></span>
+                            <div class="wrap-input100 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                <input class="input100" type="text" name="nombre_Contacto" data-validate="validate(required, text, minlength(10), maxlengt(50))" value="<?=$nombre." ".$apellidoP." ".$apellidoM;?>" hidden>
+                                <span class="focus-input100" data-placeholder="Nombre completo"></span><br><br><?=$nombre." ".$apellidoP." ".$apellidoM;?>
                             </div>
 
-                            <div  class="wrap-input100 validate-input" data-validate = "¡Teléfono invalido!">
-                                <input class="input100" type="number" name="telefono_Contacto">
-                                <span  class="focus-input100" data-placeholder="Teléfono"></span>
+                            <div class="row">
+                                    <div class="col-lg-1 col-md-1"></div>
+                                <div  class="wrap-input100 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <input class="input100" type="text" name="telefono_Contacto" data-validate="validate(required, number, minlength(10), maxlengt(15))" value="<?=$telefono;?>" hidden>
+                                    <span  class="focus-input100" data-placeholder="Teléfono"></span><br><br><?=$telefono;?>
+                                </div>
+
+                                    <div class="col-lg-1 col-md-1"></div>
+
+                                 <div class="wrap-input100 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <input class="input100" type="text" name="email_Contacto" data-validate="validate(required, email)" value="<?=$correo;?>" hidden>
+                                    <span  class="focus-input100" data-placeholder="Correo electrónico"></span><br><br><?=$correo;?>
+                                </div>
+
+
                             </div>
 
-                            <div  class="wrap-input100 validate-input" data-validate = "¡Correo invalido!">
-                                <input class="input100" type="email" name="email_Contacto">
-                                <span  class="focus-input100" data-placeholder="Correo electrónico"></span>
-                            </div>
 
-                            <div  class="wrap-input100 validate-input" data-validate = "¡Ingresa un mensaje o pregunta!">
-                                <textarea class="input100" type="text" name="mensaje_Contacto" placeholder="Mensaje"></textarea>
+                            <div  class="wrap-input100 validate-input">
+                                <textarea class="input100" type="text" name="mensaje_Contacto" placeholder="Mensaje" data-validate="validate(required, text, minlength(20), maxlengt(200))"></textarea>
                                
                             </div>
                             
                             <?php $fecha = date('Y-m-d');?>
+
                             <div hidden class="form-group">
                                 <input type="text" class="form-control" name="fecha_Contacto" placeholder="Fecha" value="<?php echo $fecha;?>" required/>
                             </div>
 
-                            <input type="button" onclick="swal('hola');" class="btn south-btn btn-3">
-                            <button onclick="swal('Hola');" type="submit" class="btn south-btn btn-3">Enviar mensaje <span class="boton fa fa-send"></span></button>
+
+                            <button  type="submit" class="btn south-btn btn-3">Enviar mensaje <span class="boton fa fa-send"></span></button>
+
+                        <script type="text/javascript">
+                        $('#default-behavior').ketchup();
+                        </script>
 
                         </form>
                     </div>
                 </div>
+                            <?php
+                        }else{ 
+                            ?>
+        <div class="col-12 col-lg-8">
+                    <div class="contact-form wow fadeInUp" data-delay="400ms">
+                        <form id="default-behavior" action="<?=base_url().'Contactos/nuevoContacto';?>" method="POST">
+                             <div align="center" class="form-group">
+
+                            <div class="wrap-input100 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                <input class="input100" type="text" name="nombre_Contacto" data-validate="validate(required, text, minlength(10), maxlengt(50))" >
+                                <span class="focus-input100" data-placeholder="Nombre completo"></span>
+                            </div>
+
+                            <div class="row">
+                                    <div class="col-lg-1 col-md-1"></div>
+                                <div  class="wrap-input100 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <input class="input100" type="text" name="telefono_Contacto" data-validate="validate(required, number, minlength(10), maxlengt(15))" >
+                                    <span  class="focus-input100" data-placeholder="Teléfono"></span>
+                                </div>
+
+                                    <div class="col-lg-1 col-md-1"></div>
+
+                                 <div class="wrap-input100 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <input class="input100" type="text" name="email_Contacto" data-validate="validate(required, email)" >
+                                    <span class="focus-input100" data-placeholder="Correo electrónico"></span>
+                                </div>
+
+
+                            </div>
+
+
+                            <div  class="wrap-input100 validate-input">
+                                <textarea class="input100" type="text" name="mensaje_Contacto" placeholder="Mensaje" data-validate="validate(required, text, minlength(20), maxlengt(200))"></textarea>
+                               
+                            </div>
+                            
+                            <?php $fecha = date('Y-m-d');?>
+
+                            <div hidden class="form-group">
+                                <input type="text" class="form-control" name="fecha_Contacto" placeholder="Fecha" value="<?php echo $fecha;?>" required/>
+                            </div>
+
+
+                            <button  type="submit" class="btn south-btn btn-3">Enviar mensaje <span class="boton fa fa-send"></span></button>
+
+                        <script type="text/javascript">
+                        $('#default-behavior').ketchup();
+                        </script>
+
+                        </form>
+                    </div>
+                </div>
+
+
+                        <?php
+                            }
+                        ?>
+
+
             </div>
         </div>
 

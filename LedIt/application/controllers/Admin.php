@@ -73,14 +73,12 @@ class Admin extends CI_Controller {
 		        $galeria->display_as('id_Usuario_Galeria','Usuario que registró');
 		        $galeria->display_as('titulo_Galeria','Título de imagen');
 		        $galeria->display_as('imagen_Galeria','Imagen ');
-		        $galeria->display_as('id_Status_Galeria','Status');
+		        $galeria->display_as('id_Status_Galeria','Estatus');
 		        $galerias = $galeria->render();
 		        $this->load->view('admin/backend/template/header');
 		        $this->load->view('admin/backend/galeria/listar_vw',(array)$galerias);
 		        $this->load->view('admin/backend/template/footer-grocery');
 		        break;
-
-
 
 			case 4:
 				$faq = new grocery_CRUD();
@@ -109,7 +107,7 @@ class Admin extends CI_Controller {
 		        $faq->display_as('id_Usuario_Faq','Usuario que registró');
 		        $faq->display_as('pregunta_Faq','Pregunta');
 		        $faq->display_as('respuesta_Faq','Respuesta');
-		        $faq->display_as('id_Status_Faq','Status');
+		        $faq->display_as('id_Status_Faq','Estatus');
 		        $faqs = $faq->render();
 		        $this->load->view('admin/backend/template/header');
 		        $this->load->view('admin/backend/faqs/listar_vw',(array)$faqs);
@@ -152,7 +150,7 @@ class Admin extends CI_Controller {
 		        $noticia->display_as('descripcion_Corta_Noticia','Descripción breve');
 		        $noticia->display_as('descripcion_Larga_Noticia','Descripción completa');
 		        $noticia->display_as('fecha_Noticia','Fecha de publicación');
-		        $noticia->display_as('id_Status_Noticia','Status');
+		        $noticia->display_as('id_Status_Noticia','Estatus');
 		        $noticias = $noticia->render();
 		        $this->load->view('admin/backend/template/header');
 		        $this->load->view('admin/backend/noticias/listar_vw',(array)$noticias);
@@ -164,7 +162,8 @@ class Admin extends CI_Controller {
 			    $usuario = new grocery_CRUD();
 				$usuario->set_theme('bootstrap-v4');
 		        $usuario->set_table('usuarios');
-		        $usuario->where('id_Privilegios_Usuario != "1"');
+		        $usuario->where('id_Privilegios_Usuario = "2"');
+		        $usuario->or_where('id_Privilegios_Usuario = "3"');
 		        $usuario->order_by('id_Privilegios_Usuario','ASC');
 		        $usuario->set_relation('id_Status_Usuario','status','status');
 		        $usuario->set_relation('id_Privilegios_Usuario','privilegios','privilegio');
@@ -173,8 +172,8 @@ class Admin extends CI_Controller {
 		        $usuario->callback_add_field('correo_Usuario', function () {
 		        return "<input class='form-control' type='email' maxlength='300' name='correo_Usuario'>";});
 		        $usuario->field_type('password','password');
-		       	$usuario->columns('nombre_Usuario','apellido_Paterno_Usuario','apellido_Materno_Usuario','estado_Usuario','ciudad_Usuario','calle_Usuario','numero_Interior_Usuario','numero_Exterior_Usuario','telefono_Usuario','correo_Usuario','id_Privilegios_Usuario','id_Status_Usuario');
-		        $usuario->display_as('imagen_Usuario','Imagen de perfil');
+		       	$usuario->columns('imagen_Usuario','nombre_Usuario','apellido_Paterno_Usuario','apellido_Materno_Usuario','estado_Usuario','ciudad_Usuario','calle_Usuario','numero_Interior_Usuario','numero_Exterior_Usuario','telefono_Usuario','correo_Usuario','id_Privilegios_Usuario','id_Status_Usuario');
+		        $usuario->display_as('imagen_Usuario','Avatar');
 		        $usuario->display_as('nombre_Usuario','Nombre');
 		        $usuario->display_as('apellido_Paterno_Usuario','Apellido paterno');
 		        $usuario->display_as('apellido_Materno_Usuario','Apellido materno');
@@ -187,7 +186,7 @@ class Admin extends CI_Controller {
 		        $usuario->display_as('correo_Usuario','Email');
 		        $usuario->display_as('password','Contraseña');
 		        $usuario->display_as('id_Privilegios_Usuario','Tipo de usuario');
-		        $usuario->display_as('id_Status_Usuario','Status');
+		        $usuario->display_as('id_Status_Usuario','Estatus');
 		        $usuarios = $usuario->render();
 		        $this->load->view('admin/backend/template/header');
 		        $this->load->view('admin/backend/usuarios/listar_vw',(array)$usuarios);
@@ -198,10 +197,12 @@ class Admin extends CI_Controller {
 			    $producto = new grocery_CRUD();
 				$producto->set_theme('bootstrap-v4');
 		        $producto->set_table('productos');
+
 		        $producto->order_by('id_Producto','DESC');
 		        $producto->set_relation('id_Usuario_Producto','usuarios','nombre_Usuario');
 		        $producto->set_relation('id_Categoria_Producto','categorias','nombre_Categoria');
 		 		$producto->set_relation('id_Status_Producto','status','status');
+		 		$producto->field_type('precio_Producto','number');
 		        $producto->required_fields('id_Usuario_Producto','id_Categoria_Producto','imagen_Producto','modelo_Producto','nombre_Producto','potencia_Producto','voltaje_Producto','color_Luz_Producto','flujo_Luminoso_Producto','material_Producto','precio_Producto','stock_Producto','id_Status_Producto');
 		        $usuario=$this->session->userdata('usuario');
 		        if ($usuario==3) {
@@ -232,7 +233,7 @@ class Admin extends CI_Controller {
 		        $producto->display_as('material_Producto','Material del producto');
 		        $producto->display_as('precio_Producto','Precio ($)');
 		        $producto->display_as('stock_Producto','Cantidad de producto (Stock)');
-		        $producto->display_as('id_Status_Producto','Status');
+		        $producto->display_as('id_Status_Producto','Estatus');
 		        $productos = $producto->render();
 		        $this->load->view('admin/backend/template/header');
 		        $this->load->view('admin/backend/productos/listar_vw',(array)$productos);
@@ -254,7 +255,7 @@ class Admin extends CI_Controller {
 		        $categoria->display_as('nombre_Categoria','Nombre de Categoría');
 		        $categoria->display_as('imagen_Categoria','Imagen');
 		        $categoria->display_as('descripcion_Categoria','Descripción');
-		        $categoria->display_as('id_Status_Categoria','Status');
+		        $categoria->display_as('id_Status_Categoria','Estatus');
 		        $categorias = $categoria->render();
 		        $this->load->view('admin/backend/template/header');
 		        $this->load->view('admin/backend/categorias/listar_vw',(array)$categorias);
@@ -262,10 +263,27 @@ class Admin extends CI_Controller {
 		        break;
 
 		    case 9:
- 				$data['contactos'] = $this->Contacto_Mdl->listarContacto();
+ 				$contacto = new grocery_CRUD();
+				$contacto->set_theme('bootstrap-v4');
+		        $contacto->set_table('contactos');
+		        $contacto->unset_add('contactos');
+		        $contacto->unset_edit('contactos');
+		        $contacto->order_by('id_Contacto','DESC');
+		        $contacto->columns('fecha_Contacto','mensaje_Contacto','nombre_Contacto','email_Contacto','telefono_Contacto');
+		         $usuario=$this->session->userdata('usuario');
+		        if ($usuario==3) {
+		        	$contacto->unset_delete('contactos');
+		        }
+		        $contacto->set_field_upload('imagen_Usuario','libraries/libraries-backend/images/thumbnails/usuarios');
+		        $contacto->display_as('nombre_Contacto','Nombre del contacto');
+		        $contacto->display_as('telefono_Contacto','Teléfono');
+		        $contacto->display_as('email_Contacto','Correo electrónico');
+		        $contacto->display_as('mensaje_Contacto','Mensaje');
+		        $contacto->display_as('fecha_Contacto','Fecha');
+		        $contactos = $contacto->render();
 		        $this->load->view('admin/backend/template/header');
-		        $this->load->view('admin/backend/contactos/listar_vw',$data);
-		        $this->load->view('admin/backend/template/footer');
+		        $this->load->view('admin/backend/contactos/listar_vw',(array)$contactos);
+		        $this->load->view('admin/backend/template/footer-grocery');
 		        break;
 
 		    case 10:
@@ -278,6 +296,62 @@ class Admin extends CI_Controller {
 
 			case 12:
 			    $this->load->view('errors/html/error_403');    
+			    break;
+
+			case 13:
+				$cliente = new grocery_CRUD();
+				$cliente->set_theme('bootstrap-v4');
+		        $cliente->set_table('usuarios');
+		        $cliente->where('id_Privilegios_Usuario = "4"');
+		        $cliente->order_by('id_Usuario','DESC');
+		        $cliente->set_relation('id_Status_Usuario','status','status');
+		        $cliente->set_relation('id_Privilegios_Usuario','privilegios','privilegio');
+		        $usuario=$this->session->userdata('usuario');
+		        if ($usuario==3) {
+		        	$cliente->unset_delete('contactos');
+		        	$cliente->unset_read('contactos');
+		        	$cliente->unset_edit('contactos');
+		        }
+		        $cliente->unset_add('usuarios');
+		        $cliente->field_type('password','password');
+		        $cliente->edit_fields('nombre_Usuario','apellido_Paterno_Usuario','apellido_Materno_Usuario','calle_Usuario','numero_Interior_Usuario','numero_Exterior_Usuario','telefono_Usuario','correo_Usuario','id_Status_Usuario');
+		       	$cliente->columns('nombre_Usuario','apellido_Paterno_Usuario','apellido_Materno_Usuario','calle_Usuario','numero_Interior_Usuario','numero_Exterior_Usuario','telefono_Usuario','correo_Usuario','id_Status_Usuario');
+		        
+		        $cliente->display_as('nombre_Usuario','Nombre');
+		        $cliente->display_as('apellido_Paterno_Usuario','Apellido paterno');
+		        $cliente->display_as('apellido_Materno_Usuario','Apellido materno');
+		         $cliente->display_as('calle_Usuario','Calle');
+		        $cliente->display_as('numero_Interior_Usuario','Número (exterior/interior)');
+		        $cliente->display_as('numero_Exterior_Usuario','Código postal');
+		        $cliente->display_as('telefono_Usuario','Teléfono');
+		        $cliente->display_as('correo_Usuario','Email');
+		        $cliente->display_as('id_Privilegios_Usuario','Tipo de usuario');
+		        $cliente->display_as('id_Status_Usuario','Estatus');
+		        $clientes = $cliente->render();
+		        $this->load->view('admin/backend/template/header');
+		        $this->load->view('admin/backend/clientes/listar_vw',(array)$clientes);
+		        $this->load->view('admin/backend/template/footer-grocery');
+		        break;
+
+			    case 14:
+			    $venta = new grocery_CRUD();
+				$venta->set_theme('bootstrap-v4');
+		        $venta->set_table('ventas');
+		        $venta->unset_add('ventas');
+		        $venta->unset_edit('');
+		        $venta->order_by('id_Venta','DESC');
+		        $venta->set_relation('id_Usuario_Venta','usuarios','nombre_Usuario');
+		        $venta->display_as('id_Usuario_Venta','Usuario');
+		        $venta->display_as('catidad_Producto','Cantidad de productos vendidos');
+		        $venta->display_as('total_Venta','Total de la venta ($)');
+		        $venta->display_as('metodo_Pago_Venta','Método pago');
+		        $venta->display_as('metodo_Envio_Venta','Método envío');
+		        $venta->display_as('fecha_Noticia','Fecha de publicación');
+		        $venta->display_as('fecha_Venta','Fecha de la venta');
+		        $ventas = $venta->render();
+		        $this->load->view('admin/backend/template/header');
+		        $this->load->view('admin/backend/ventas/listar_vw',(array)$ventas);
+		        $this->load->view('admin/backend/template/footer-grocery');
 			    break;
 			}
 		}

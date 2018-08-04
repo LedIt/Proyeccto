@@ -27,23 +27,28 @@ class Usuario extends CI_Controller {
  */
 public function registrarUsuario(){
 
-  $this->Usuario_Mdl->set_user_name($this->input->post('user_name'));
-  $this->Usuario_Mdl->set_user_email($this->input->post('user_email'));
-  $this->Usuario_Mdl->set_user_password($this->input->post('user_password'));
-  $this->Usuario_Mdl->set_user_age($this->input->post('user_age'));
-  $this->Usuario_Mdl->set_user_mobile($this->input->post('user_mobile'));
+  $this->Usuario_Mdl->setNombreUsuario($this->input->post('nombre_Usuario'));
+  $this->Usuario_Mdl->setApellidoPaterno($this->input->post('apellido_Paterno_Usuario'));
+  $this->Usuario_Mdl->setApellidoMaterno($this->input->post('apellido_Materno_Usuario'));
+  $this->Usuario_Mdl->setCalleUsuario($this->input->post('calle_Usuario'));
+  $this->Usuario_Mdl->setNumeroInterior($this->input->post('numero_Interior_Usuario'));
+  $this->Usuario_Mdl->setNumeroExterior($this->input->post('numero_Exterior_Usuario'));
+  $this->Usuario_Mdl->setTelefonoUsuario($this->input->post('telefono_Usuario'));
+  $this->Usuario_Mdl->setCorreoUsuario($this->input->post('correo_Usuario'));
+  $this->Usuario_Mdl->setPassword($this->input->post('password'));
+  $this->Usuario_Mdl->setIdPrivilegiosUsuario($this->input->post('id_Privilegios_Usuario'));
+  $this->Usuario_Mdl->setIdStatusUsuario($this->input->post('id_Status_Usuario'));
 
-    $verificarEmail = $this->Usuario_Mdl->verificarEmail($this->Usuario_Mdl->get_user_email());
+  $verificarEmail = $this->Usuario_Mdl->verificarEmail($this->Usuario_Mdl->getCorreoUsuario());
 
     if($verificarEmail){
-      $this->Usuario_Mdl->register_user();
-      $this->session->set_flashdata('success_msg', 'Cuenta creada satisftoriamente.');
-      redirect('User/login_view');
-
+      $this->Usuario_Mdl->registrarUsuario();
+      $this->session->set_flashdata('registro_exitoso', 'exitoso');
+      redirect('Admin/index/11');
     }
     else{
-      $this->session->set_flashdata('error_msg', 'El email ya existe, intenta ingresar otro');
-      redirect('User');
+      $this->session->set_flashdata('registro_fallo', 'fallo');
+      redirect('Admin/index/10');
     }
 }
 /**
@@ -65,7 +70,8 @@ public function login(){
         $this->session->set_userdata('nombre',$data['nombre_Usuario']);
         $this->session->set_userdata('perfil',$data['imagen_Usuario']);
         $this->session->set_userdata('usuario',$data['id_Privilegios_Usuario']);
-        redirect('Admin/index/9','refresh');
+        $this->session->set_userdata('telefono',$data['telefono_Usuario']);
+        redirect('Admin/index/14');
       }
 
       else{
@@ -73,12 +79,50 @@ public function login(){
         redirect('Admin/index/1');
       }
 }
+
+
+public function loginCliente(){
+  $loginUsuario=array(
+  'correo_Usuario'=>$this->input->POST('correo_Usuario'),
+  'password'=>$this->input->POST('password')
+  );
+
+  $data=$this->Usuario_Mdl->loginCliente($loginUsuario['correo_Usuario'],$loginUsuario['password']);
+
+      if($data)
+      {
+        $this->session->set_userdata('id',$data['id_Usuario']);
+        $this->session->set_userdata('correo',$data['correo_Usuario']);
+        $this->session->set_userdata('nombre',$data['nombre_Usuario']);
+        $this->session->set_userdata('perfil',$data['imagen_Usuario']);
+        $this->session->set_userdata('usuario',$data['id_Privilegios_Usuario']);
+        $this->session->set_userdata('apellidoP',$data['apellido_Paterno_Usuario']);
+        $this->session->set_userdata('apellidoM',$data['apellido_Materno_Usuario']);
+        $this->session->set_userdata('telefono',$data['telefono_Usuario']);
+        $this->session->set_userdata('calle',$data['calle_Usuario']);
+        $this->session->set_userdata('numeroI',$data['numero_Interior_Usuario']);
+        $this->session->set_userdata('postal',$data['numero_Exterior_Usuario']);
+        
+        redirect('ControlFrontEnd/index/1');
+      }
+
+      else{
+        $this->session->set_flashdata('login_fallo', 'fallo login');
+        redirect('Admin/index/11');
+      }
+}
+
 /**
  * La función ejecuta el cierre de la sesión borrando los datos de la misma.
  */
     public function logout(){
         $this->session->sess_destroy() ;
-        redirect('Admin','refresh');
+        redirect('Admin');
+    }
+
+       public function logoutCliente(){
+        $this->session->sess_destroy() ;
+        redirect('ControlFrontEnd/index/1');
     }
 }
 ?>
